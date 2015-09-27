@@ -4,38 +4,55 @@ var chalk = require('chalk');
 var yosay = require('yosay');
 
 module.exports = yeoman.generators.Base.extend({
+  constructor: function () {
+    yeoman.Base.apply(this, arguments);
+    this.argument('project_name', { type: String, required: false });
+  },
   prompting: function () {
     var done = this.async();
 
     // Have Yeoman greet the user.
     this.log(yosay(
-      'Welcome to the striking ' + chalk.red('DjangoREST') + ' generator!'
+      'Mess with the best, ' + chalk.red('Django likes REST...') + ' Yeah...'
     ));
 
-    var prompts = [{
-      type: 'confirm',
-      name: 'someOption',
-      message: 'Would you like to enable this option?',
-      default: true
-    }];
+    var prompts = [];
+
+    if (!this.project_name){
+      prompts.splice(0, 0, {
+        type: 'input',
+        name: 'project_name',
+        message: 'What is the name of your project?',
+        default: 'mysite'
+      });
+    }
 
     this.prompt(prompts, function (props) {
       this.props = props;
       // To access props later use this.props.someOption;
+      if (!this.props.project_name){
+        this.props.project_name = this.project_name;
+      }
 
       done();
     }.bind(this));
   },
 
   writing: {
-    app: function () {
-      this.fs.copy(
-        this.templatePath('_package.json'),
-        this.destinationPath('package.json')
+    django: function() {
+      // - first without the mysite module
+      this.fs.copyTpl(
+        // skip Gruntfile.js, since it uses <% templates, causing clashes
+        this.templatePath('django/mysite/!(mysite){/**/*,*}'),
+        this.destinationPath('/whydoineedthis/'),
+        this
+        //{interpolate: /{{([\s\S]+?)}}/g} // using the {{ }} template delim.
       );
-      this.fs.copy(
-        this.templatePath('_bower.json'),
-        this.destinationPath('bower.json')
+      this.fs.copyTpl(
+        this.templatePath('django/mysite/mysite/{/**/*,*}'),
+        this.destinationPath(this.props.project_name + '/whydoineedthis/'),
+        this
+        //{interpolate: /{{([\s\S]+?)}}/g} // using the {{ }} template delim.
       );
     },
 
@@ -44,14 +61,10 @@ module.exports = yeoman.generators.Base.extend({
         this.templatePath('editorconfig'),
         this.destinationPath('.editorconfig')
       );
-      this.fs.copy(
-        this.templatePath('jshintrc'),
-        this.destinationPath('.jshintrc')
-      );
     }
   },
 
   install: function () {
-    this.installDependencies();
+    //this.installDependencies();
   }
 });
