@@ -45,13 +45,13 @@ module.exports = yeoman.generators.Base.extend({
         // skip Gruntfile.js, since it uses <% templates, causing clashes
         this.templatePath('django/mysite/!(mysite){/**/*,*}'),
         this.destinationPath('/whydoineedthis/'),
-        this
+        this.props
         //{interpolate: /{{([\s\S]+?)}}/g} // using the {{ }} template delim.
       );
       this.fs.copyTpl(
         this.templatePath('django/mysite/mysite/{/**/*,*}'),
         this.destinationPath(this.props.project_name + '/whydoineedthis/'),
-        this
+        this.props
         //{interpolate: /{{([\s\S]+?)}}/g} // using the {{ }} template delim.
       );
     },
