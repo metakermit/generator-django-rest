@@ -32,7 +32,7 @@ npm install -g generator-django-rest
 Finally, initiate the generator:
 
 ```bash
-yo Django REST
+yo django-rest
 ```
 
 ### Getting To Know Yeoman
@@ -44,4 +44,4 @@ If you'd like to get to know Yeoman better and meet some of his friends, [Grunt]
 
 ## License
 
-MIT
+GPLv3

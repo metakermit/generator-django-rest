@@ -1,8 +1,8 @@
 {
   "name": "generator-django-rest",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Yeoman generator",
-  "license": "MIT",
+  "license": "GPLv3",
   "main": "app/index.js",
   "repository": "kermit666/generator-django-rest",
   "author": {
