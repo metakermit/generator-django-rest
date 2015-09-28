@@ -15,10 +15,8 @@ describe('Django REST:app', function () {
 
   it('creates files', function () {
     assert.file([
-      'bower.json',
-      'package.json',
+      'manage.py',
       '.editorconfig',
-      '.jshintrc'
     ]);
   });
 });
