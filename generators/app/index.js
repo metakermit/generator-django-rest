@@ -59,10 +59,16 @@ module.exports = yeoman.generators.Base.extend({
     },
 
     projectfiles: function () {
-      this.fs.copy(
-        this.templatePath('editorconfig'),
-        this.destinationPath('.editorconfig')
+      this.fs.copyTpl(
+        this.templatePath('*'),
+        this.destinationPath('./whydoineedthis/'),
+        this.props
+        //{interpolate: /{{([\s\S]+?)}}/g} // using the {{ }} template delim.
       );
+      // this.fs.copy(
+      //   this.templatePath('editorconfig'),
+      //   this.destinationPath('.editorconfig')
+      // );
     }
   },
 
