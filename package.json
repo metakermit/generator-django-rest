@@ -4,11 +4,11 @@
   "description": "Yeoman generator",
   "license": "GPLv3",
   "main": "app/index.js",
-  "repository": "kermit666/generator-django-rest",
+  "repository": "metakermit/generator-django-rest",
   "author": {
     "name": "Dražen Lučanin",
     "email": "kermit666 at gmail.com",
-    "url": "https://github.com/kermit666"
+    "url": "https://github.com/metakermit"
   },
   "scripts": {
     "test": "mocha"

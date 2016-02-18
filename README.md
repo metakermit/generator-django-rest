@@ -1,4 +1,4 @@
-# generator-django-rest [![Build Status](https://secure.travis-ci.org/kermit666/generator-django-rest.png?branch=master)](https://travis-ci.org/kermit666/generator-django-rest)
+# generator-django-rest [![Build Status](https://secure.travis-ci.org/metakermit/generator-django-rest.png?branch=master)](https://travis-ci.org/metakermit/generator-django-rest)
 
 > [Yeoman](http://yeoman.io) generator
 
