@@ -1,0 +1,12 @@
+# Base requirements for prod/dev/test that come with the django-rest generator
+
+Django==1.9.1
+dj-database-url==0.2.2
+-e git+https://github.com/kennethreitz/dj-static.git#egg=dj_static-master
+Pillow==2.3.0
+django-celery==3.1.17
+psycopg2==2.5.4
+dj-static==0.0.6
+djangorestframework==3.3.2
+
+-r custom.txt
