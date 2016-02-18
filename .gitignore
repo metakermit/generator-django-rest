@@ -1,2 +1,71 @@
+# Basics
+*.py[cod]
+*.pyc
+__pycache__
+
+# C extensions
+*.so
+
+# Packages
+*.egg
+*.egg-info
+dist
+build
+eggs
+parts
+bin
+var
+sdist
+develop-eggs
+.installed.cfg
+lib
+lib64
+__pycache__
+
+# Logs
+*.log
+pip-log.txt
+
+# Unit test / coverage reports
+.coverage
+.tox
+nosetests.xml
+
+# Translations
+*.mo
+*.pot
+
+# IDEs
+.mr.developer.cfg
+.project
+.pydevproject
+.idea
+
+# Vim
+*~
+*.swp
+*.swo
+
+# Emacs
+\#*\#
+.\#*
+
+# npm
 node_modules
-coverage
+
+# Compass
+.sass-cache
+
+# database
+tmp
+*.db
+*.sqlite3
+
+# virtualenv
+venv
+
+# unsorted
+staticfiles
+newrelic.ini
+.vagrant
+media
