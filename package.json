@@ -2,29 +2,47 @@
   "name": "generator-django-rest",
   "version": "0.1.0",
   "description": "Yeoman generator",
-  "license": "GPL-3.0",
-  "main": "app/index.js",
-  "repository": "metakermit/generator-django-rest",
+  "homepage": "https://github.com/metakermit/generator-django-rest",
   "author": {
     "name": "Dražen Lučanin",
-    "email": "kermit666 at gmail.com",
+    "email": "kermit666@gmail.com",
     "url": "https://github.com/metakermit"
-  },
-  "scripts": {
-    "test": "mocha"
   },
   "files": [
     "generators"
   ],
+  "main": "app/index.js",
   "keywords": [
+    "yeoman-generator",
     "yeoman-generator"
   ],
+  "license": "GPL-3.0",
+  "repository": "metakermit/generator-django-rest",
+  "scripts": {
+    "test": "gulp",
+    "prepublish": "gulp prepublish"
+  },
   "dependencies": {
-    "yeoman-generator": "^0.19.0",
+    "yeoman-generator": "^0.21.1",
     "chalk": "^1.0.0",
     "yosay": "^1.0.2"
   },
   "devDependencies": {
-    "mocha": "*"
+    "mocha": "*",
+    "yeoman-assert": "^2.0.0",
+    "eslint-config-xo-space": "^0.7.0",
+    "gulp": "^3.9.0",
+    "gulp-eslint": "^1.0.0",
+    "gulp-exclude-gitignore": "^1.0.0",
+    "gulp-istanbul": "^0.10.3",
+    "gulp-mocha": "^2.0.0",
+    "gulp-plumber": "^1.0.0",
+    "gulp-nsp": "^2.1.0"
+  },
+  "eslintConfig": {
+    "extends": "xo-space",
+    "env": {
+      "mocha": true
+    }
   }
 }
