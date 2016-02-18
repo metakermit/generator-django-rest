@@ -1,6 +1,6 @@
 {
   "name": "generator-django-rest",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Yeoman generator",
   "homepage": "https://github.com/metakermit/generator-django-rest",
   "author": {
