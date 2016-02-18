@@ -2,7 +2,7 @@
   "name": "generator-django-rest",
   "version": "0.1.0",
   "description": "Yeoman generator",
-  "license": "GPLv3",
+  "license": "GPL-3.0",
   "main": "app/index.js",
   "repository": "metakermit/generator-django-rest",
   "author": {
