@@ -1,6 +1,23 @@
 # Development
 
-TODO
+Setup your development environment:
+
+    ./scripts/devsetup.sh
+
+And start developing
+
+    ./scripts/dev.sh
+
+Manual steps on the first run (TODO: automate):
+
+    mkvirtualenv -p `python3` <%= project_name %>
+    pip install -r requirements/dev.txt
+    honcho -f Procfile.dev start # with commented out web command
+    psql postgres -p 5433
+    create user <%= project_name %> with password '<%= project_name %>';
+    create database <%= project_name %> encoding 'utf8' template template0 owner <%= project_name %>;
+    python manage.py migrate
+    # uncomment the web command
 
 ## Upgrading the scaffolding
 
@@ -15,6 +32,6 @@ get the generator-django-rest dependencies:
 
 Then from within the root of your project (the path containing this file) run:
 
-    yo django-rest posterbat
+    yo django-rest <%= project_name %>
 
 And resolve any conflicts using the interactive queries.
