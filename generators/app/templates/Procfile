@@ -1,0 +1,2 @@
+web: gunicorn <%= project_name %>.wsgi
+worker: celery worker -A <%= project_name %>.celery --loglevel=info --logfile=worker.log -B

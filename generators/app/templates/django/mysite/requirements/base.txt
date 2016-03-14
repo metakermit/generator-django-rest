@@ -7,5 +7,6 @@ celery==3.1.23
 psycopg2==2.6.1
 dj-static==0.0.6
 djangorestframework==3.3.2
+redis==2.10.5
 
 -r custom.txt
