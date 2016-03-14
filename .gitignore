@@ -69,3 +69,4 @@ staticfiles
 newrelic.ini
 .vagrant
 media
+coverage
