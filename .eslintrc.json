@@ -1,0 +1,8 @@
+{
+  "extends": "eslint:recommended",
+  "rules": {
+    /* off=0, warn=1, error=2 */
+    "camelcase": 0,
+    "spaced-comment": 0
+  }
+}

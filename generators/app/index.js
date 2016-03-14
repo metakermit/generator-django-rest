@@ -6,7 +6,7 @@ var yosay = require('yosay');
 module.exports = yeoman.generators.Base.extend({
   constructor: function () {
     yeoman.Base.apply(this, arguments);
-    this.argument('project_name', { type: String, required: false });
+    this.argument('project_name', {type: String, required: false});
   },
   prompting: function () {
     var done = this.async();
@@ -18,7 +18,7 @@ module.exports = yeoman.generators.Base.extend({
 
     var prompts = [];
 
-    if (!this.project_name){
+    if (!this.project_name) {
       prompts.splice(0, 0, {
         type: 'input',
         name: 'project_name',
@@ -30,7 +30,7 @@ module.exports = yeoman.generators.Base.extend({
     this.prompt(prompts, function (props) {
       this.props = props;
       // To access props later use this.props.someOption;
-      if (!this.props.project_name){
+      if (!this.props.project_name) {
         this.props.project_name = this.project_name;
       }
 

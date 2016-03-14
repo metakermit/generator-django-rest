@@ -10,11 +10,10 @@ describe('generator-django-rest:app', function () {
       .withPrompts({someAnswer: true})
       .on('end', done);
   });
-
-    it('creates files', function () {
-        assert.file([
-            'manage.py',
-            'requirements.txt',
-        ]);
+  it('creates files', function () {
+    assert.file([
+      'manage.py',
+      'requirements.txt'
+    ]);
   });
 });
