@@ -13,7 +13,6 @@
   ],
   "main": "app/index.js",
   "keywords": [
-    "yeoman-generator",
     "yeoman-generator"
   ],
   "license": "GPL-3.0",

@@ -24,6 +24,7 @@ module.exports = yeoman.generators.Base.extend({
         name: 'project_name',
         message: 'What is the name of your project?',
         default: 'mysite'
+        //store   : true // ? http://yeoman.io/authoring/user-interactions.html
       });
     }
 
