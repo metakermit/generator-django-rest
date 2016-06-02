@@ -62,8 +62,9 @@ module.exports = yeoman.generators.Base.extend({
     projectfiles: function () {
       this.fs.copyTpl(
         this.templatePath('*'),
-        this.destinationPath('./whydoineedthis/'),
+        this.destinationPath('./'),
         this.props
+
         //{interpolate: /{{([\s\S]+?)}}/g} // using the {{ }} template delim.
       );
       // this.fs.copy(
