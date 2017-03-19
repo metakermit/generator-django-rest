@@ -10,9 +10,9 @@ PROJECT_NAME=<%= project_name %>
 
 ## Python setup
 # create venv if not there (use venv)
-python3 -m venv venv
+python3 -m venv .venv
 # activate it
-source ./venv/bin/activate
+source ./.venv/bin/activate
 
 # create the .env file
 if [ ! -f .env ]; then
@@ -32,7 +32,7 @@ fi
 
 # install requirements
 echo "* install dev requirements"
-./venv/bin/pip install -r requirements/dev.txt
+./.venv/bin/pip install -r requirements/dev.txt
 
 # create the database
 if [ ! -d tmp/postgres ]; then
@@ -44,7 +44,7 @@ if [ ! -d tmp/postgres ]; then
     psql postgres -p $DB_PORT -c "create user ${PROJECT_NAME} with password '${PROJECT_NAME}';"
     psql postgres -p $DB_PORT -c "create database ${PROJECT_NAME} encoding 'utf8' template template0 owner ${PROJECT_NAME};"
     sleep 3
-    ./venv/bin/python manage.py migrate
+    ./.venv/bin/python manage.py migrate
     kill `cat tmp/postgres.pid`
     echo "* DB ready"
 else

@@ -19,6 +19,8 @@ build
 *~
 \#*\#
 *.pyc
+venv
+.venv
 *.sqlite3
 
 node_modules
@@ -27,12 +29,20 @@ dist
 .sass-cache
 app/bower_components
 test/bower_components
+coverage/
 
 prod
 static
-
+staticfiles
 Procfile.dev
 tmp
 .env
+
 celerybeat-schedule
 dump.rdb
+.prod-tmp
+
+<%= project_name %>/media/*
+
+# app-specific
+# add your own expressions to ignore here
