@@ -24,6 +24,10 @@ You can quickly deploy <%= project_name %> to Heroku:
 *Note: there seems to be an error with Heroku, check
 [this solution](http://stackoverflow.com/a/38954680/544059).*
 
+Once this initial setup is working, you normally deploy by issuing:
+
+    ./scripts/deploy.sh
+
 ## Upgrading the scaffolding
 
 The scaffolding for this Django project was built using
@@ -49,4 +53,4 @@ Then from within the root of your project (the path containing this file) run:
 
 And resolve any conflicts using the interactive queries.
 
-[generator-django-rest]: (http://github.com/metakermit/generator-django-rest)
+[generator-django-rest]: https://github.com/metakermit/generator-django-rest

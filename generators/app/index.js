@@ -16,7 +16,13 @@ module.exports = yeoman.generators.Base.extend({
       'Mess with the best, ' + chalk.red('Django likes REST...') + ' Yeah...'
     ));
 
-    var prompts = [];
+    var prompts = [{
+      type: 'confirm',
+      name: 'prod_branch',
+      message: 'Would you like to use a separate prod branch for the minified build?',
+      default: false,
+      store: true
+    }];
 
     if (!this.project_name) {
       prompts.splice(0, 0, {
@@ -59,18 +65,24 @@ module.exports = yeoman.generators.Base.extend({
       );
     },
 
+    static: function() {
+      if (!this.props.prod_branch) {
+        this.fs.copyTpl(
+          this.templatePath('static/{/**/*,*}'),
+          this.destinationPath(this.props.project_name + '/static/whydoineedthis/'),
+          this.props
+        );
+      }
+    },
+
     projectfiles: function () {
       this.fs.copyTpl(
-        this.templatePath('{*,.*}'),
+        this.templatePath('projectfiles/{*,.*}'),
         this.destinationPath('./'),
         this.props
 
         //{interpolate: /{{([\s\S]+?)}}/g} // using the {{ }} template delim.
       );
-      // this.fs.copy(
-      //   this.templatePath('editorconfig'),
-      //   this.destinationPath('.editorconfig')
-      // );
     }
   },
 

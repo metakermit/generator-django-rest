@@ -32,7 +32,9 @@ test/bower_components
 coverage/
 
 prod
+<% if (prod_branch) { %>
 static
+<% } %>
 staticfiles
 Procfile.dev
 tmp

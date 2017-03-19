@@ -1,9 +1,19 @@
 # generator-django-rest [![Build Status](https://secure.travis-ci.org/metakermit/generator-django-rest.png?branch=master)](https://travis-ci.org/metakermit/generator-django-rest)
 
 [Yeoman](http://yeoman.io) generator for a Django REST API
-that keeps things simple, yet makes everything work nicely on Heroku.
-A lot of the settings are taken from the excellent
-[cookiecutter-django](https://github.com/pydanny/cookiecutter-django).
+that keeps things simple, yet includes includes features you need in a typical
+web app.
+
+Features:
+
+- 12-factor 🤓
+- quick to launch 🚀 Start a new project and deploy it to Heroku in 3 commands:
+
+    yo django-rest
+    ./scripts/devsetup.sh
+    ./scripts/deploy.sh
+
+- productive ⚡️ Start a development server easily using `./scripts/dev.sh`
 
 ## Getting Started
 
