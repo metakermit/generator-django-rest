@@ -4,7 +4,7 @@
 mkdir prod
 cd prod
 git init
-git remote add origin git@github.com:metakermit/posterbat.git
+git remote add origin git@github.com:username/<%= project_name %>.git
 # TODO: add heroku remote
 git checkout -b prod
 echo "# The production branch" > README.md

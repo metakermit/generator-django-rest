@@ -8,13 +8,11 @@ PROJECT_NAME=<%= project_name %>
 # backend stuff
 # -------------
 
-## Python setup - TODO
+## Python setup
 # create venv if not there (use venv)
-# python3 -m venv venv
+python3 -m venv venv
 # activate it
-# ./venv/bin/activate
-# install requirements
-# pip install -r requirements/dev.txt
+source ./venv/bin/activate
 
 # create the .env file
 if [ ! -f .env ]; then
@@ -26,7 +24,7 @@ fi
 
 # install requirements
 echo "* install dev requirements"
-pip install -r requirements/dev.txt
+./venv/bin/pip install -r requirements/dev.txt
 
 # create the database
 if [ ! -d tmp/postgres ]; then
