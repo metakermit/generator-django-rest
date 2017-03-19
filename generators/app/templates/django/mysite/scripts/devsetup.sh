@@ -10,7 +10,7 @@ PROJECT_NAME=<%= project_name %>
 
 ## Python setup
 # create venv if not there (use venv)
-python3 -m venv .venv
+python3 -m venv --prompt "<%= project_name %>" .venv
 # activate it
 source ./.venv/bin/activate
 

@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 """
 
 import environ
+from django.core.exceptions import ImproperlyConfigured
 
 env = environ.Env( # set default values and casting
     DEBUG=(bool, False),
@@ -146,11 +147,14 @@ else: # DEPLOYMENT == prod
     # EMAIL_USE_TLS = True
     # EMAIL_HOST_PASSWORD = os.environ['SENDGRID_PASSWORD']
 
-    BACKBLAZEB2_ACCOUNT_ID = env('BACKBLAZEB2_ACCOUNT_ID')
-    BACKBLAZEB2_APP_KEY = env('BACKBLAZEB2_APP_KEY')
-    BACKBLAZEB2_BUCKET_NAME = env('BACKBLAZEB2_BUCKET')
-    DEFAULT_FILE_STORAGE = 'b2_storage.storage.B2Storage'
-    # INSTALLED_APPS.append('b2_storage.authorise')
+    try:
+        BACKBLAZEB2_ACCOUNT_ID = env('BACKBLAZEB2_ACCOUNT_ID')
+        BACKBLAZEB2_APP_KEY = env('BACKBLAZEB2_APP_KEY')
+        BACKBLAZEB2_BUCKET_NAME = env('BACKBLAZEB2_BUCKET')
+        DEFAULT_FILE_STORAGE = 'b2_storage.storage.B2Storage'
+        # INSTALLED_APPS.append('b2_storage.authorise')
+    except ImproperlyConfigured:
+        pass # use the default file storage
 
     # add extra apps
     # INSTALLED_APPS.append('raven.contrib.django.raven_compat')

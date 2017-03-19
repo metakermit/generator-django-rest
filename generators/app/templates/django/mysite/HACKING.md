@@ -8,6 +8,22 @@ And start developing
 
     ./scripts/dev.sh
 
+## Deployment to Heroku
+
+You can quickly deploy <%= project_name %> to Heroku:
+
+    git init
+    git add -A
+    git commit -m "initial commit"
+    heroku login
+    heroku create <%= project_name %>
+    heroku addons:create heroku-redis:hobby-dev # for Celery
+    git push heroku master
+    heroku run python manage.py migrate
+
+*Note: there seems to be an error with Heroku, check
+[this solution](http://stackoverflow.com/a/38954680/544059).*
+
 ## Upgrading the scaffolding
 
 The scaffolding for this Django project was built using
