@@ -36,4 +36,4 @@ yo django-rest
 
 ## License
 
-GPLv3
+MIT
