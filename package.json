@@ -1,6 +1,6 @@
 {
   "name": "generator-django-rest",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "A Yeoman generator for a Django REST API that makes you efficient, includes features you need in a typical modern web app, yet keeps things simple.",
   "homepage": "https://github.com/metakermit/generator-django-rest",
   "author": {
