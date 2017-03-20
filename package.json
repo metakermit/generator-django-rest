@@ -1,7 +1,7 @@
 {
   "name": "generator-django-rest",
   "version": "0.3.1",
-  "description": "Yeoman generator",
+  "description": "A Yeoman generator for a Django REST API that makes you efficient, includes features you need in a typical modern web app, yet keeps things simple.",
   "homepage": "https://github.com/metakermit/generator-django-rest",
   "author": {
     "name": "Dražen Lučanin",
@@ -13,9 +13,13 @@
   ],
   "main": "app/index.js",
   "keywords": [
-    "yeoman-generator"
+    "yeoman-generator",
+    "django",
+    "django-rest",
+    "django-SPA",
+    "python"
   ],
-  "license": "GPL-3.0",
+  "license": "MIT",
   "repository": "metakermit/generator-django-rest",
   "scripts": {
     "test": "gulp",
