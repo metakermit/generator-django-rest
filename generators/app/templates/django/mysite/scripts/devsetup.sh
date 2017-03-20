@@ -61,7 +61,7 @@ fi
 # git checkout --orphan prod
 
 # link to UI
-if [ ! -e "${PROJECT_NAME}/static" ]; then
+if [[ ! -e ${PROJECT_NAME}/static && ! -L ${PROJECT_NAME}/static ]]; then
     echo "* linking Django app to the JS frontend"
     CURDIR=`pwd`
     cd ${PROJECT_NAME}
