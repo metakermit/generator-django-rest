@@ -1,4 +1,4 @@
-# generator-django-rest [![Build Status](https://secure.travis-ci.org/metakermit/generator-django-rest.png?branch=master)](https://travis-ci.org/metakermit/generator-django-rest)
+# generator-django-rest [![npm](https://badge.fury.io/js/generator-django-rest.svg)](http://badge.fury.io/js/generator-django-rest) [![Build Status](https://travis-ci.org/metakermit/generator-django-rest.svg?branch=master)](https://travis-ci.org/metakermit/generator-django-rest) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/metakermit/generator-django-rest/master/LICENSE) 
 
 A [Yeoman](http://yeoman.io) generator for a Django REST API
 that makes you efficient, includes features you need in a typical
