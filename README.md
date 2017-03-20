@@ -1,19 +1,49 @@
 # generator-django-rest [![Build Status](https://secure.travis-ci.org/metakermit/generator-django-rest.png?branch=master)](https://travis-ci.org/metakermit/generator-django-rest)
 
-[Yeoman](http://yeoman.io) generator for a Django REST API
-that keeps things simple, yet includes includes features you need in a typical
-web app.
+A [Yeoman](http://yeoman.io) generator for a Django REST API
+that makes you efficient, includes features you need in a typical
+modern web app, yet keeps things simple.
 
-Features:
+**Note: the project is still considered to be in alpha until I get a chance
+to test it on more apps!**
 
-- 12-factor 🤓
-- quick to launch 🚀 Start a new project and deploy it to Heroku in 3 commands:
+## Features
 
-    yo django-rest
-    ./scripts/devsetup.sh
-    ./scripts/deploy.sh
+The philosophy is to include features useful across projects
+that are tedious to set up from scratch. So far we've got
 
-- productive ⚡️ Start a development server easily using `./scripts/dev.sh`
+- quick to launch 🚀 – start a new project and deploy it to [Heroku][]
+in 3 commands:
+
+        yo django-rest
+        ./scripts/devsetup.sh
+        ./scripts/deploy.sh
+
+- productive ⚡️ – start the Django & DB dev servers easily
+
+        ./scripts/dev.sh
+
+- sane logging 📜 – defaults to
+  [fail nicely](https://github.com/metakermit/fail-nicely-django)
+- modern JS 🦄 – serve static files on */* using Whitenoise for
+  [nice single-page apps][Django-SPA] using React / Angular2 / Vue and the like
+- [12-factor][] config 🤓 – environment variable configuration
+
+  * define a variable in *.env* for dev e.g. `REDIS_URL=redis://localhost:6379/0`
+  * use it in *settings.py*, e.g. `CELERY_RESULT_BACKEND = env('REDIS_URL')`
+  * set variables on the prod server (just works™ with Redis on [Heroku][])
+
+- batteries included 🔋
+
+  * [Celery][] with a Redis backend – cause you'll need an async task queue
+  * [Backblaze B2](https://www.backblaze.com/b2/cloud-storage.html)
+    media file storage backend (optional)
+
+- familiar 🐶 – check out the rough
+  [project file layout](generators/app/templates/django/mysite),
+  it's much like `django-admin startproject myproject` would set it up
+  (only repeats the project name twice,
+    i.e. *~/code/myproject/myproject/settigns.py*)
 
 ## Getting Started
 
@@ -43,7 +73,13 @@ cd myproject
 yo django-rest
 ```
 
+Now check *HACKING.md* for extra instructions.
 
 ## License
 
 MIT
+
+[Heroku]: https://heroku.com/
+[12-factor]: https://12factor.net/config
+[Django-SPA]: https://metakermit.com/2016/simple-way-to-set-up-django-a-spa-frontend-on-heroku/
+[Celery]: http://www.celeryproject.org/
