@@ -16,5 +16,6 @@ whitenoise==3.2.2
 #django-backblazeb2-storage==0.3
 -e git://github.com/metakermit/django-backblazeb2-storage.git@public-url#egg=django-backblazeb2-storage
 django-debug-toolbar==1.6
+django-anymail==0.8
 
 -r custom.txt

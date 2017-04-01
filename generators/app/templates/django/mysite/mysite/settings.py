@@ -57,6 +57,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'corsheaders',
+    'anymail',
     'debug_toolbar',
     'django_extensions',
 ]
@@ -139,26 +140,33 @@ if DEPLOYMENT == 'dev':
     MEDIA_ROOT = root('media')
     MEDIA_URL = '/media/'
 else: # DEPLOYMENT == prod
-    # TODO: use Sendgrid/Mailgun for e-mail delivery
-    # email config
-    # EMAIL_HOST_USER = os.environ['SENDGRID_USERNAME']
-    # EMAIL_HOST= 'smtp.sendgrid.net'
-    # EMAIL_PORT = 587
-    # EMAIL_USE_TLS = True
-    # EMAIL_HOST_PASSWORD = os.environ['SENDGRID_PASSWORD']
-
-    try:
-        BACKBLAZEB2_ACCOUNT_ID = env('BACKBLAZEB2_ACCOUNT_ID')
-        BACKBLAZEB2_APP_KEY = env('BACKBLAZEB2_APP_KEY')
-        BACKBLAZEB2_BUCKET_NAME = env('BACKBLAZEB2_BUCKET')
-        DEFAULT_FILE_STORAGE = 'b2_storage.storage.B2Storage'
-        # INSTALLED_APPS.append('b2_storage.authorise')
-    except ImproperlyConfigured:
-        pass # use the default file storage
-
+    # SECURE_SSL_REDIRECT = True
     # add extra apps
     # INSTALLED_APPS.append('raven.contrib.django.raven_compat')
+    pass
 
+# Media storage backend
+try:
+    BACKBLAZEB2_ACCOUNT_ID = env('BACKBLAZEB2_ACCOUNT_ID')
+    BACKBLAZEB2_APP_KEY = env('BACKBLAZEB2_APP_KEY')
+    BACKBLAZEB2_BUCKET_NAME = env('BACKBLAZEB2_BUCKET')
+    DEFAULT_FILE_STORAGE = 'b2_storage.storage.B2Storage'
+    # INSTALLED_APPS.append('b2_storage.authorise')
+except ImproperlyConfigured:
+    pass # use the default file storage to disk
+
+# Email sending
+try:
+    ANYMAIL = {
+        # (exact settings here depend on your ESP...)
+        "MAILGUN_API_KEY": env('MAILGUN_API_KEY'),
+        # your Mailgun domain, if needed:
+        "MAILGUN_SENDER_DOMAIN": env('MAILGUN_DOMAIN'),
+    }
+    EMAIL_BACKEND = "anymail.backends.mailgun.EmailBackend"
+    # or sendgrid.EmailBackend, or...
+except ImproperlyConfigured:
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.10/topics/i18n/
