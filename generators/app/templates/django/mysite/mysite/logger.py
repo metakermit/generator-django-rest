@@ -68,7 +68,7 @@ LOGGING = {
             'level': min_django_level, # this level or higher goes to the console
             'propagate': False, # don't propagate further, to avoid duplication
         },
-        # root configuration – for all of our own apps
+        # root configuration - for all of our own apps
         # (feel free to do separate treatment for e.g. brokenapp vs. sth else)
         '': {
             'handlers': ['logfile', 'console'],
