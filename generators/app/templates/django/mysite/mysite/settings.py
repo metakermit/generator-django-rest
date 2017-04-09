@@ -137,8 +137,6 @@ if DEPLOYMENT == 'dev':
     CELERY_ALWAYS_EAGER = True # run tasks in same thread for development
     #CELERY_EAGER_PROPAGATES_EXCEPTIONS = True
     ADMINS = (('admin', 'admin@localhost'),)
-    MEDIA_ROOT = root('media')
-    MEDIA_URL = '/media/'
 else: # DEPLOYMENT == prod
     # SECURE_SSL_REDIRECT = True
     # add extra apps
@@ -152,8 +150,9 @@ try:
     BACKBLAZEB2_BUCKET_NAME = env('BACKBLAZEB2_BUCKET')
     DEFAULT_FILE_STORAGE = 'b2_storage.storage.B2Storage'
     # INSTALLED_APPS.append('b2_storage.authorise')
-except ImproperlyConfigured:
-    pass # use the default file storage to disk
+except ImproperlyConfigured: # use the default file storage to disk
+    MEDIA_ROOT = root('media')
+    MEDIA_URL = '/media/'
 
 # Email sending
 try:
