@@ -14,7 +14,7 @@ results
 npm-debug.log
 bower_components
 components
-build
+/build
 
 *~
 \#*\#
@@ -31,12 +31,12 @@ app/bower_components
 test/bower_components
 coverage/
 
-prod
+/prod
 <% if (prod_branch) { %>
-static
+/static
 <% } %>
-staticfiles
-Procfile.dev
+/staticfiles
+/Procfile.dev
 tmp
 .env
 
@@ -44,7 +44,7 @@ celerybeat-schedule
 dump.rdb
 .prod-tmp
 
-<%= project_name %>/media/*
+/<%= project_name %>/media/*
 
 # app-specific
 # add your own expressions to ignore here

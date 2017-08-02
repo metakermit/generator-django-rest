@@ -19,7 +19,7 @@ module.exports = yeoman.generators.Base.extend({
     var prompts = [{
       type: 'confirm',
       name: 'prod_branch',
-      message: 'Would you like to use a separate prod branch for the minified build?',
+      message: 'You want like... a create-react-app frontend that compiles to a separate prod branch & stuff?',
       default: false,
       store: true
     }];

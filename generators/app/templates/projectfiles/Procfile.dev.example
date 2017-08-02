@@ -3,3 +3,6 @@ pg: postgres -D tmp/postgres -p 5433
 worker: celery worker -A <%= project_name %>.celery --loglevel=info --logfile=worker.log -B
 web: python manage.py runserver_plus
 # web: gunicorn <%= project_name %>.wsgi
+<% if (prod_branch) { %>
+frontend: (cd <%= project_name %>-frontend; yarn start)
+<% } %>

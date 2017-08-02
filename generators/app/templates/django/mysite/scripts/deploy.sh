@@ -1,7 +1,7 @@
 #!/bin/bash
 <% if (prod_branch) { %>
-gulp
-gulp commit
+./scripts/util/prod-package.sh
+./scripts/util/prod-commit.sh
 (cd prod; git push heroku prod:master)
 <% } else { %>
 git push heroku master

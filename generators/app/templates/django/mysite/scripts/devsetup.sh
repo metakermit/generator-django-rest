@@ -2,15 +2,14 @@
 
 set -e
 
-DB_PORT=5433
-PROJECT_NAME=<%= project_name %>
+source ./scripts/util/env.sh
 
 # backend stuff
 # -------------
 
 ## Python setup
 # create venv if not there (use venv)
-python3 -m venv --prompt "<%= project_name %>" .venv
+python3 -m venv --prompt "${PROJECT_NAME}" .venv
 # activate it
 source ./.venv/bin/activate
 
@@ -53,19 +52,21 @@ fi
 
 # frontend stuff
 # -------------
-
-# maybe run initial `gulp build`
-
-# create empty branch to store the minified code
-# this is done by the gulp task automatically, it seems
-# git checkout --orphan prod
-
+<% if (prod_branch) { %>
+if [ ! -d $FRONTEND_NAME ]; then
+  create-react-app $FRONTEND_NAME
+fi
+# build the frontend
+./scripts/util/prod-package.sh
+<% } else { %>
+# optionally compile your frontend code here
+<% } %>
 # link to UI
 if [[ ! -e ${PROJECT_NAME}/static && ! -L ${PROJECT_NAME}/static ]]; then
     echo "* linking Django app to the JS frontend"
     CURDIR=`pwd`
     cd ${PROJECT_NAME}
-    ln -s ../dist static
+    ln -s ../${FRONTEND_NAME}/build static
     cd $CURDIR
 else
     echo "* frontend already linked"
