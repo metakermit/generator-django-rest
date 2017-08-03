@@ -57,6 +57,7 @@ if [ ! -d $FRONTEND_NAME ]; then
   create-react-app $FRONTEND_NAME
 fi
 # build the frontend
+(cd $FRONTEND_NAME; yarn install)
 ./scripts/util/prod-package.sh
 <% } else { %>
 # optionally compile your frontend code here

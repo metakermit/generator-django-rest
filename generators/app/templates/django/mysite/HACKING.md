@@ -28,9 +28,14 @@ Once this initial setup is working, you normally deploy by issuing:
 
     ./scripts/deploy.sh
 
-Everything gets compiled into a *prod/* folder, commited into a prod branch
-and pushed to Heroku. An example of the prod folder layout would look something
-like:
+## Frontend details
+<% if (prod_branch) { %>
+Since the tooling manages a React SPA as well,
+the compilation is a bit more complex, so we will explain the internals a bit.
+When you call *./deploy.sh* everything gets compiled into a *prod/* folder,
+commited into a prod branch and pushed to Heroku.
+
+An example of the *prod/* folder layout would look something like this:
 
 ```
 prod
@@ -74,6 +79,12 @@ prod
 └── runtime.txt
 ```
 
+Note that create-react-app includes a service worker that caches everything
+into local storage which is good for performance reasons, but messes up routing
+for server-side routes like /admin. If you still wish to use these, disable
+the service worker by commenting out the line `registerServiceWorker();`
+in *index.js*.
+<% } %>
 ## Upgrading the scaffolding
 
 The scaffolding for this Django project was built using

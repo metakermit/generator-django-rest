@@ -23,10 +23,10 @@ from django.conf import settings
 admin.autodiscover()
 
 urlpatterns = [
-
-    # static files (*.css, *.js, *.jpg etc.) served on /
-    url(r'^(?!/?static/)(?!/?media/)(?P<path>.*\..*)$',
-        RedirectView.as_view(url='/static/%(path)s', permanent=False)),
+    # The following SPA settings are handled in Django-SPA
+    # - everything not matched in Django's urlpatterns goes to /
+    # - index.html served on /
+    # - all /static/... files served on /...
 
     # other views still work too
     url(r'^admin/', include(admin.site.urls)),

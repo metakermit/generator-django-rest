@@ -33,7 +33,7 @@ coverage/
 
 /prod
 <% if (prod_branch) { %>
-/static
+/<%= project_name %>/static
 <% } %>
 /staticfiles
 /Procfile.dev
