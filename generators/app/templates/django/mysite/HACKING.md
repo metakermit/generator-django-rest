@@ -18,7 +18,7 @@ You can quickly deploy <%= project_name %> to Heroku:
     heroku login
     heroku create <%= project_name %>
     heroku addons:create heroku-redis:hobby-dev # for Celery
-    git push heroku master
+    ./scripts/deploy.sh
     heroku run python manage.py migrate
 
 *Note: there seems to be an error with Heroku, check

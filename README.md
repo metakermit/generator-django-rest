@@ -1,16 +1,18 @@
-# generator-django-rest [![npm](https://badge.fury.io/js/generator-django-rest.svg)](http://badge.fury.io/js/generator-django-rest) [![Build Status](https://travis-ci.org/metakermit/generator-django-rest.svg?branch=master)](https://travis-ci.org/metakermit/generator-django-rest) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/metakermit/generator-django-rest/master/LICENSE) 
+# generator-django-rest [![npm](https://badge.fury.io/js/generator-django-rest.svg)](http://badge.fury.io/js/generator-django-rest) [![Build Status](https://travis-ci.org/metakermit/generator-django-rest.svg?branch=master)](https://travis-ci.org/metakermit/generator-django-rest) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/metakermit/generator-django-rest/master/LICENSE)
 
 A [Yeoman](http://yeoman.io) generator for a Django REST API
+(and optionally a React SPA)
 that makes you efficient, includes features you need in a typical
 modern web app, yet keeps things simple.
 
-**Note: the project is still considered to be in alpha until I get a chance
-to test it on more apps!**
+**Note: the project is still considered to be in beta until I get a chance
+to test it on more apps. That said, I am using it in my own projects :)**
 
 ## Features
 
 The philosophy is to include features useful across projects
-that are tedious to set up from scratch. So far we've got
+that are tedious to set up from scratch.
+Some of the cool ones are:
 
 - quick to launch 🚀 – start a new project and deploy it to [Heroku][]
 in 3 commands:
@@ -19,14 +21,17 @@ in 3 commands:
         ./scripts/devsetup.sh
         ./scripts/deploy.sh
 
-- productive ⚡️ – start the Django & DB dev servers easily
+- productive ⚡️ – start the Django, DB & optionally frontend dev servers easily
 
         ./scripts/dev.sh
 
 - sane logging 📜 – defaults to
   [fail nicely](https://github.com/metakermit/fail-nicely-django)
-- modern JS 🦄 – serve static files on */* using Whitenoise for
-  [nice single-page apps][Django-SPA] using React / Angular2 / Vue and the like
+- modern JS 🦄 – serve static files on */* using [django-spa][] & Whitenoise for
+  [nice single-page apps][spa-frontend-on-heroku] using React / Angular2 / Vue…
+- self-sufficient ⛵️ - option to automatically set up a [create-react-app][]
+  frontend for you with all the integration settings under the mantra
+  *one app, one repo, one dyno*
 - [12-factor][] config 🤓 – environment variable configuration
 
   * define a variable in *.env* for dev e.g. `REDIS_URL=redis://localhost:6379/0`
@@ -47,7 +52,7 @@ in 3 commands:
 
 ## Getting Started
 
-To begin, your computer first needs [node.js](https://nodejs.org).
+To begin, you need to install [node.js](https://nodejs.org).
 Once you have that, you need Yeoman pre-installed. Yeoman lives in the
 [npm](https://npmjs.org) package repository. You only have to ask for him
 once, then he packs up and moves into your hard drive.
@@ -81,5 +86,7 @@ MIT
 
 [Heroku]: https://heroku.com/
 [12-factor]: https://12factor.net/config
-[Django-SPA]: https://metakermit.com/2016/simple-way-to-set-up-django-a-spa-frontend-on-heroku/
+[spa-frontend-on-heroku]: https://metakermit.com/2016/simple-way-to-set-up-django-a-spa-frontend-on-heroku/
 [Celery]: http://www.celeryproject.org/
+[create-react-app]: https://github.com/facebookincubator/create-react-app
+[django-spa]: https://github.com/metakermit/django-spa
