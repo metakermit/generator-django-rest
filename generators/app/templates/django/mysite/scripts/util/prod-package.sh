@@ -10,7 +10,7 @@ mkdir -p prod
 if [ -d ./prod/.git ]; then
   (cd prod; git rm -rf .; git clean -fxd)
 else
-  (cd prod; rm -rf .)
+  (rm -rf ./prod/*)
 fi
 
 # copy all of the backend and only the build frontend
@@ -26,3 +26,6 @@ rsync -avm \
 # move the frontend to its place
 mv prod/$FRONTEND_NAME/build prod/$PROJECT_NAME/static
 rmdir prod/$FRONTEND_NAME
+
+# add a production gitignore
+cp ./scripts/util/prod-gitignore prod/$PROJECT_NAME/.gitignore
