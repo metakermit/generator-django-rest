@@ -28,6 +28,52 @@ Once this initial setup is working, you normally deploy by issuing:
 
     ./scripts/deploy.sh
 
+Everything gets compiled into a *prod/* folder, commited into a prod branch
+and pushed to Heroku. An example of the prod folder layout would look something
+like:
+
+```
+prod
+├── Dockerfile
+├── HACKING.md
+├── Procfile
+├── Procfile.dev.example
+├── README.md
+├── docker-compose.yml
+├── manage.py
+├── myproject
+│   ├── __init__.py
+│   ├── celery.py
+│   ├── logger.py
+│   ├── middleware.py
+│   ├── settings.py
+│   ├── static
+│   │   ├── asset-manifest.json
+│   │   ├── favicon.ico
+│   │   ├── index.html
+│   │   ├── manifest.json
+│   │   ├── service-worker.js
+│   │   └── static
+│   │       ├── css
+│   │       │   ├── main.cacbacc7.css
+│   │       │   └── main.cacbacc7.css.map
+│   │       ├── js
+│   │       │   ├── main.120eaed3.js
+│   │       │   └── main.120eaed3.js.map
+│   │       └── media
+│   │           └── logo.5d5d9eef.svg
+│   ├── urls.py
+│   └── wsgi.py
+├── requirements
+│   ├── base.txt
+│   ├── custom.txt
+│   ├── dev.txt
+│   ├── prod.txt
+│   └── test.txt
+├── requirements.txt
+└── runtime.txt
+```
+
 ## Upgrading the scaffolding
 
 The scaffolding for this Django project was built using

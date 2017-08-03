@@ -32,6 +32,10 @@ in 3 commands:
 - self-sufficient ⛵️ - option to automatically set up a [create-react-app][]
   frontend for you with all the integration settings under the mantra
   *one app, one repo, one dyno*
+- Heroku-friendly packaging 📦 – if you're using the built-in React frontend,
+  `deploy.sh` minifies the frontend and packages it up with Django
+  into a separate prod branch ready for deployment as a Django web app
+  (that gets deployed to Heroku by default)
 - [12-factor][] config 🤓 – environment variable configuration
 
   * define a variable in *.env* for dev e.g. `REDIS_URL=redis://localhost:6379/0`
