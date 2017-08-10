@@ -35,7 +35,7 @@ coverage/
 <% if (prod_branch) { %>
 /<%= project_name %>/static
 <% } %>
-/staticfiles
+staticfiles
 /Procfile.dev
 tmp
 .env

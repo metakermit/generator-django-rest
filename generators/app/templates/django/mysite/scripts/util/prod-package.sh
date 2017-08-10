@@ -28,4 +28,4 @@ mv prod/$FRONTEND_NAME/build prod/$PROJECT_NAME/static
 rmdir prod/$FRONTEND_NAME
 
 # add a production gitignore
-cp ./scripts/util/prod-gitignore prod/$PROJECT_NAME/.gitignore
+cp ./scripts/util/prod-gitignore prod/.gitignore
