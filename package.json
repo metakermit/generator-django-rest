@@ -1,6 +1,6 @@
 {
   "name": "generator-django-rest",
-  "version": "0.4.2",
+  "version": "0.4.3",
   "description": "A Yeoman generator for a Django REST API that makes you efficient, includes features you need in a typical modern web app, yet keeps things simple.",
   "homepage": "https://github.com/metakermit/generator-django-rest",
   "author": {
@@ -26,21 +26,21 @@
     "prepublish": "gulp prepublish"
   },
   "dependencies": {
-    "yeoman-generator": "^0.21.1",
     "chalk": "^1.0.0",
+    "yeoman-generator": "^0.21.1",
     "yosay": "^1.0.2"
   },
   "devDependencies": {
-    "mocha": "*",
-    "yeoman-assert": "^2.0.0",
     "eslint-config-xo-space": "^0.7.0",
     "gulp": "^3.9.0",
     "gulp-eslint": "^1.0.0",
     "gulp-exclude-gitignore": "^1.0.0",
     "gulp-istanbul": "^0.10.3",
     "gulp-mocha": "^2.0.0",
+    "gulp-nsp": "^2.1.0",
     "gulp-plumber": "^1.0.0",
-    "gulp-nsp": "^2.1.0"
+    "mocha": "*",
+    "yeoman-assert": "^2.0.0"
   },
   "eslintConfig": {
     "extends": "xo-space",
