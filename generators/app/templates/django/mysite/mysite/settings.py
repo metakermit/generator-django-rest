@@ -185,9 +185,9 @@ STATIC_URL = '/static/'
 # Extra places for collectstatic to find static files.
 STATICFILES_DIRS = (root('static'),)
 
-# Simplified static file serving.
-# https://warehouse.python.org/project/whitenoise/
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# Django SPA - simple setup for serving modern SPAs from Django
+# https://github.com/metakermit/django-spa
+STATICFILES_STORAGE = 'spa.storage.SPAStaticFilesStorage'
 
 from .logger import LOGGING
 

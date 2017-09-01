@@ -11,12 +11,11 @@ django-cors-headers==1.3.1
 psycopg2==2.6.1
 djangorestframework==3.5.3
 redis==2.10.5
-whitenoise==3.2.2
 # while https://github.com/royendgel/django-backblazeb2-storage/pull/6
 #django-backblazeb2-storage==0.3
 -e git://github.com/metakermit/django-backblazeb2-storage.git@public-url#egg=django-backblazeb2-storage
 django-debug-toolbar==1.6
-django-spa==0.1
+django-spa==0.2
 django-anymail==0.8
 
 -r custom.txt
