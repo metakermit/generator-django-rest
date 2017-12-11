@@ -12,43 +12,43 @@ to test it on more apps. That said, I am using it in my own projects :)**
 
 The philosophy is to include features useful across projects
 that are tedious to set up from scratch.
-Some of the cool ones are:
+Some of the cool features are:
 
-- quick to launch 🚀 – start a new project and deploy it to [Heroku][]
+- 🚀 quick to launch – start a new project and deploy it to [Heroku][]
 in 3 commands:
 
         yo django-rest
         ./scripts/devsetup.sh
         ./scripts/deploy.sh
 
-- productive ⚡️ – start the Django, DB & optionally frontend dev servers easily
+- ⚡️ productive – start the Django, DB & optionally frontend dev servers easily
 
         ./scripts/dev.sh
 
-- sane logging 📜 – defaults to
+- 📜 sane logging – defaults to
   [fail nicely](https://github.com/metakermit/fail-nicely-django)
-- modern JS 🦄 – serve static files on */* using [django-spa][] & Whitenoise for
+- 🦄 modern JS – serve static files on */* using [django-spa][] & Whitenoise for
   [nice single-page apps][spa-frontend-on-heroku] using React / Angular2 / Vue…
-- self-sufficient ⛵️ - option to automatically set up a [create-react-app][]
+- ⛵️ self-sufficient - option to automatically set up a [create-react-app][]
   frontend for you with all the integration settings under the mantra
   *one app, one repo, one dyno*
-- Heroku-friendly packaging 📦 – if you're using the built-in React frontend,
+- 📦 Heroku-friendly packaging – if you're using the built-in React frontend,
   `deploy.sh` minifies the frontend and packages it up with Django
   into a separate prod branch ready for deployment as a Django web app
   (that gets deployed to Heroku by default)
-- [12-factor][] config 🤓 – environment variable configuration
+- 🤓 [12-factor][] config – environment variable configuration
 
   * define a variable in *.env* for dev e.g. `REDIS_URL=redis://localhost:6379/0`
   * use it in *settings.py*, e.g. `CELERY_RESULT_BACKEND = env('REDIS_URL')`
   * set variables on the prod server (just works™ with Redis on [Heroku][])
 
-- batteries included 🔋
+- 🔋 batteries included
 
   * [Celery][] with a Redis backend – cause you'll need an async task queue
   * [Backblaze B2](https://www.backblaze.com/b2/cloud-storage.html)
     media file storage backend (optional)
 
-- familiar 🐶 – check out the rough
+- 🐶 familiar – check out the rough
   [project file layout](generators/app/templates/django/mysite),
   it's much like `django-admin startproject myproject` would set it up
   (only repeats the project name twice,
