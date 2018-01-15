@@ -29,8 +29,8 @@ in 3 commands:
   [fail nicely](https://github.com/metakermit/fail-nicely-django)
 - 🦄 modern JS – serve static files on */* using [django-spa][] & Whitenoise for
   [nice single-page apps][spa-frontend-on-heroku] using React / Angular2 / Vue…
-- ⛵️ self-sufficient - option to automatically set up a [create-react-app][]
-  frontend for you with all the integration settings under the mantra
+- ⛵️ monorepo - option to automatically set up a [create-react-app][]
+  frontend for you in the same git repo with everything integrated under the mantra
   *one app, one repo, one dyno*
 - 📦 Heroku-friendly packaging – if you're using the built-in React frontend,
   `deploy.sh` minifies the frontend and packages it up with Django
