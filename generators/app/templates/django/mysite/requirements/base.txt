@@ -1,7 +1,7 @@
 # Base requirements for prod/dev/test that come with the django-rest generator
 
 django-environ==0.4.4
-Django==1.10.8
+Django==2.0.3
 django-extensions==1.7.6
 ipython==5.2.2
 ipdb==0.10.2
