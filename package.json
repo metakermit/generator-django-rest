@@ -23,7 +23,7 @@
   "repository": "metakermit/generator-django-rest",
   "scripts": {
     "test": "gulp",
-    "prepublish": "gulp prepublish"
+    "prepare": "gulp prepublish"
   },
   "dependencies": {
     "chalk": "^1.0.0",
