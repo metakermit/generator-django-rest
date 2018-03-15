@@ -1,0 +1,50 @@
+lib-cov
+*.seed
+*.log
+*.csv
+*.dat
+*.out
+*.pid
+*.gz
+
+pids
+logs
+results
+
+npm-debug.log
+bower_components
+components
+/build
+
+*~
+\#*\#
+*.pyc
+venv
+.venv
+*.sqlite3
+
+node_modules
+dist
+.tmp
+.sass-cache
+app/bower_components
+test/bower_components
+coverage/
+
+/prod
+<% if (prod_branch) { %>
+/<%= project_name %>/static
+<% } %>
+staticfiles
+/Procfile.dev
+tmp
+.env
+
+celerybeat-schedule
+dump.rdb
+.prod-tmp
+
+/<%= project_name %>/media/*
+
+# app-specific
+# add your own expressions to ignore here

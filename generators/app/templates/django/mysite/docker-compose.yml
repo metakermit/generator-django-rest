@@ -1,11 +1,37 @@
-db:
-  image: postgres
-web:
-  build: .
-  command: python manage.py runserver 0.0.0.0:8000
-  volumes:
-    - .:/code
-  ports:
-    - "8000:8000"
-  links:
-    - db
+version: '2'
+services:
+  db:
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: secret
+  cache:
+    image: redis
+    restart: on-failure
+  web:
+    build: .
+    image: <%= project_name %>
+    #env_file: .env
+    #command: python manage.py runserver 0.0.0.0:8000
+    restart: on-failure
+    command: gunicorn <%= project_name %>.wsgi -c <%= project_name %>/gunicorn.conf.py
+    environment:
+      DATABASE_URL: psql://secret:postgres@db/postgres
+      REDIS_URL: redis://cache:6379
+    volumes:
+      - .:/code
+    ports:
+      - "8000:8000"
+    links:
+      - db
+      - cache
+  cli:
+    image: <%= project_name %>
+    #env_file: .env
+    entrypoint: python manage.py
+    environment:
+      DATABASE_URL: psql://postgres@db/postgres
+    volumes:
+      - .:/code
+    links:
+      - db
+      - cache
