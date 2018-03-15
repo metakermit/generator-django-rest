@@ -1,6 +1,6 @@
 -r base.txt
 Werkzeug==0.14.1
-honcho==0.7.1
+honcho==1.0.1
 PyYAML==3.12
 jedi==0.9.0
 epc==0.0.5
