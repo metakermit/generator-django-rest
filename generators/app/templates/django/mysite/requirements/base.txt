@@ -14,7 +14,7 @@ redis==2.10.6
 # while https://github.com/royendgel/django-backblazeb2-storage/pull/6
 #django-backblazeb2-storage==0.3
 -e git://github.com/metakermit/django-backblazeb2-storage.git@public-url#egg=django-backblazeb2-storage
-django-debug-toolbar==1.8
+django-debug-toolbar==1.9.1
 django-spa==0.2
 django-anymail==0.8
 
