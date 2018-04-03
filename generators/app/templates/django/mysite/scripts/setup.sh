@@ -77,6 +77,15 @@ fi
 #-------------
 ./scripts/util/setup-custom.sh
 
+if [ -d .git ]; then
+    echo "* initialising the git repo"
+    git init
+    git add -A
+    git commit -m "yo django-rest"
+else
+    echo "* git repo detected, won't commit anything automatically"
+fi
+
 echo "* DONE :)"
 
 exit

@@ -89,7 +89,7 @@ Now check *HACKING.md* for extra instructions.
 
 ## License
 
-MIT
+[MIT](LICENSE)
 
 [Heroku]: https://heroku.com/
 [12-factor]: https://12factor.net/config

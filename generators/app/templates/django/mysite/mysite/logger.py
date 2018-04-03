@@ -6,7 +6,7 @@ from .settings import DEBUG
 
 # Usage in other modules:
 #
-#     from posterbat.logger import log
+#     from <%= project_name %>.logger import log
 #     log.info('some output')
 #
 # Note, doing this manually in other modules results in nicer output:
@@ -52,7 +52,7 @@ LOGGING = {
             'level': min_level, # this level or higher goes to the log file
             'class':'logging.handlers.RotatingFileHandler',
             # IMPORTANT: replace with your desired logfile name!
-            'filename': os.path.join(BASE_DIR, 'posterbat.log'),
+            'filename': os.path.join(BASE_DIR, '<%= project_name %>.log'),
             'maxBytes': 50 * 10**6, # will 50 MB do?
             'backupCount': 3, # keep this many extra historical files
             'formatter': 'timestampthread'

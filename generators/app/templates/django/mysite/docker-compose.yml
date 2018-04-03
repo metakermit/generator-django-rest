@@ -13,7 +13,7 @@ services:
     #env_file: .env
     #command: python manage.py runserver 0.0.0.0:8000
     restart: on-failure
-    command: gunicorn <%= project_name %>.wsgi -c <%= project_name %>/gunicorn.conf.py
+    command: pipenv run gunicorn <%= project_name %>.wsgi -c <%= project_name %>/gunicorn.conf.py
     environment:
       DATABASE_URL: psql://secret:postgres@db/postgres
       REDIS_URL: redis://cache:6379
@@ -27,7 +27,7 @@ services:
   cli:
     image: <%= project_name %>
     #env_file: .env
-    entrypoint: python manage.py
+    entrypoint: pipenv run python manage.py
     environment:
       DATABASE_URL: psql://postgres@db/postgres
     volumes:
