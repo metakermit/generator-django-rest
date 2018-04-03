@@ -1,4 +1,6 @@
 #!/bin/bash
+set -e
 
-source ./.venv/bin/activate
-honcho -f Procfile.dev start
+pipenv run honcho -f Procfile.dev start
+
+exit

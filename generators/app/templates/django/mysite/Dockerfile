@@ -1,8 +1,9 @@
-FROM python:3.5
+FROM python:3.6
 ENV PYTHONUNBUFFERED 1
 RUN mkdir /code
 WORKDIR /code
-ADD requirements.txt /code/requirements.txt
-ADD requirements* /code/requirements/
-RUN pip install -r requirements.txt
-ADD . /code/
+RUN pip install pipenv
+ONBUILD COPY Pipfile Pipfile
+ONBUILD COPY Pipfile.lock Pipfile.lock
+ONBUILD RUN pipenv install --system
+COPY . /code

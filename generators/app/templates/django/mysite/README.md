@@ -4,7 +4,7 @@
 
 To get started with development, set up the dependencies:
 
-    ./scripts/devsetup.sh
+    ./scripts/setup.sh
 
 And start the development server:
 

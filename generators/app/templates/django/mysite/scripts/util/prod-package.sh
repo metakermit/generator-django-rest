@@ -3,7 +3,7 @@
 source ./scripts/util/env.sh
 
 # build the frontend
-(cd $FRONTEND_NAME; yarn build)
+(cd $FRONTEND_NAME; npm build)
 
 # clean out files
 mkdir -p prod

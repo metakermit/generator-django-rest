@@ -1,7 +1,0 @@
--r base.txt
-Werkzeug==0.11.11
-honcho==0.7.1
-PyYAML==3.12
-jedi==0.9.0
-epc==0.0.5
-nose==1.3.7

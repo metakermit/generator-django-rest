@@ -2,7 +2,7 @@
 
 Setup your <%= project_name %> development environment:
 
-    ./scripts/devsetup.sh
+    ./scripts/setup.sh
 
 And start developing
 

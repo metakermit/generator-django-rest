@@ -1,4 +1,6 @@
 #!/bin/bash
+set -e
+
 <% if (prod_branch) { %>
 ./scripts/util/prod-package.sh
 ./scripts/util/prod-commit.sh
@@ -6,3 +8,5 @@
 <% } else { %>
 git push heroku master
 <% } %>
+
+exit

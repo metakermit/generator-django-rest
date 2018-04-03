@@ -18,7 +18,7 @@ Some of the cool features are:
 in 3 commands:
 
         yo django-rest
-        ./scripts/devsetup.sh
+        ./scripts/setup.sh
         ./scripts/deploy.sh
 
 - ⚡️ productive – start the Django, DB & optionally frontend dev servers easily
@@ -83,6 +83,12 @@ yo django-rest
 ```
 
 Now check *HACKING.md* for extra instructions.
+
+## Changelog
+
+0.5.1
+
+- 
 
 ## License
 
