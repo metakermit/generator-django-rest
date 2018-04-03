@@ -28,7 +28,7 @@ in 3 commands:
 - 📜 sane logging – defaults to
   [fail nicely](https://github.com/metakermit/fail-nicely-django)
 - 🦄 modern JS – serve static files on */* using [django-spa][] & Whitenoise for
-  [nice single-page apps][spa-frontend-on-heroku] using React / Angular2 / Vue…
+  [nice single-page apps][spa-frontend-on-heroku] using React / Angular / Vue…
 - ⛵️ monorepo - option to automatically set up a [create-react-app][]
   frontend for you in the same git repo with everything integrated under the mantra
   *one app, one repo, one dyno*
@@ -53,6 +53,9 @@ in 3 commands:
   it's much like `django-admin startproject myproject` would set it up
   (only repeats the project name twice,
     i.e. *~/code/myproject/myproject/settigns.py*)
+
+See [CHANGELOG.md](./CHANGELOG.md) for a full release history with all the
+features.
 
 ## Getting Started
 
@@ -83,12 +86,6 @@ yo django-rest
 ```
 
 Now check *HACKING.md* for extra instructions.
-
-## Changelog
-
-0.5.1
-
-- 
 
 ## License
 
