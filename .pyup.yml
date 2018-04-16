@@ -3,5 +3,5 @@
 
 schedule: every month
 requirements:
-  - Pipfile
-  - Pipfile.lock
+  - generators/app/templates/projectfiles/Pipfile
+  - generators/app/templates/projectfiles/Pipfile.lock
