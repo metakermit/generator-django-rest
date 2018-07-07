@@ -18,8 +18,9 @@ else
 fi
 
 # create and/or activate the virtualenv and install the requirements
+# (keep virtualenv in the project folder's .venv for better shell support)
 echo "* install dev requirements"
-pipenv install --dev
+PIPENV_VENV_IN_PROJECT=1 pipenv install --dev
 
 # create the Procfile.dev file
 if [ ! -f Procfile.dev ]; then
