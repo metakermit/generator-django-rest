@@ -111,3 +111,16 @@ Then from within the root of your project (the path containing this file) run:
 And resolve any conflicts using the interactive queries.
 
 [generator-django-rest]: https://github.com/metakermit/generator-django-rest
+
+
+## Docker
+
+To run `python manage.py` commands use `docker-compose run cli` instead:
+
+    docker-compose run cli migrate
+    docker-compose run cli createsuperuser
+
+
+And to run the entire application with necessary services:
+
+    docker-compose up

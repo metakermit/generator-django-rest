@@ -55,6 +55,8 @@ in 3 commands:
   (only repeats the project name twice,
     i.e. *~/code/myproject/myproject/settigns.py*)
 
+- 🚢 Docker support – `docker-compose up` to get a working environment with a database
+
 See [CHANGELOG.md](./CHANGELOG.md) for a full release history with all the
 features.
 
