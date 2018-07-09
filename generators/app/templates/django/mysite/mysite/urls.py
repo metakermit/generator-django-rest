@@ -19,6 +19,10 @@ from django.contrib import admin
 from django.conf.urls.static import static
 from django.views.generic import RedirectView
 from django.conf import settings
+from graphene_django.views import GraphQLView
+
+from .schema import schema
+
 
 admin.autodiscover()
 
@@ -27,6 +31,7 @@ urlpatterns = [
     # - everything not matched in Django's urlpatterns goes to /
     # - index.html served on /
     # - all /static/... files served on /...
+    path('graphql/', GraphQLView.as_view(graphiql=True, schema=schema)),
 
     # other views still work too
     path('admin/', admin.site.urls),
