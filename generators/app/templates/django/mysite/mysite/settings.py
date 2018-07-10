@@ -57,6 +57,7 @@ INSTALLED_APPS = [
     'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
     'rest_framework',
+    'graphene_django',
     'corsheaders',
     'anymail',
     'debug_toolbar',
@@ -215,3 +216,8 @@ CORS_ORIGIN_WHITELIST = (
     '127.0.0.1:8000',
 )
 # CORS_ALLOW_CREDENTIALS = True
+
+GRAPHENE = {
+    # Where your Graphene schema lives
+    'SCHEMA': '<%= project_name %>.schema.schema'
+}
