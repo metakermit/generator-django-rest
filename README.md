@@ -57,6 +57,8 @@ in 3 commands:
 
 - 🚢 Docker support – `docker-compose up` to get a working environment with a database
 
+- 🌠 GraphQL – interactive API with filtering and nested queries
+
 See [CHANGELOG.md](./CHANGELOG.md) for a full release history with all the
 features.
 
