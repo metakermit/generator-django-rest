@@ -1,5 +1,11 @@
 {
   "extends": "eslint:recommended",
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true,
+    "jest": true
+  },
   "rules": {
     /* off=0, warn=1, error=2 */
     "camelcase": 0,
