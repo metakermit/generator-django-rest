@@ -6,11 +6,15 @@ const helpers = require("yeoman-test");
 const util = require('util');
 const exec = util.promisify(require('child_process').exec);
 
-function run(cmd, options) {
-  return exec(cmd, options).then( (stdout, stderr) => {
-    if (stderr) assert.fail(stderr)
-    return stdout
-  })
+
+function run_partial(cwd) {
+  return function(cmd) {
+    return exec(cmd, {cwd})
+  }
+}
+
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 
@@ -28,15 +32,22 @@ describe("generator-mytest:app", () => {
     assert.file(["manage.py", "Pipfile", "docker-compose.yml"]);
   });
 
-  it("can build docker container and test", (cb) => {
+  describe("docker", () => {
     jest.setTimeout(1000 * 60 * 15) //15 minutes
-    let dir = rc.targetDirectory
-    //return rc.inTmpDir(function (dir) {
-      return run('docker-compose build', {cwd: dir}).then( () => {
-        return run('docker-compose run cli test', {cwd: dir})
-      }).then(cb).catch(error => {
-        assert.fail(error)
+    afterAll(() => {
+      let run = run_partial(rc.targetDirectory)
+      return run('docker-compose rm -f -s').catch(() => {})
+    });
+
+    it("can build docker container and test", () => {
+      let run = run_partial(rc.targetDirectory)
+      return run('docker-compose build').then( () => {
+        return run('docker-compose up -d')
+      }).then( () => {
+        return sleep(3000)
+      }).then( () => {
+        return run('docker-compose run cli test')
       });
-    //});
+    });
   });
 });
