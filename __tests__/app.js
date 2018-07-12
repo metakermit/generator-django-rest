@@ -8,7 +8,7 @@ const exec = require('child_process').exec;
 function run_partial(cwd) {
   return function(cmd) {
     return new Promise( (resolve, reject) => {
-      let cp = exec(cmd, {cwd}, function(error) {
+      let cp = exec(cmd, {cwd: cwd}, function(error) {
         if (error) {
           reject(error)
         } else {
