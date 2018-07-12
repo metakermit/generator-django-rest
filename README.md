@@ -45,6 +45,8 @@ in 3 commands:
 
 - 🔋 batteries included
 
+  * [snapshottest](https://github.com/syrusakbary/snapshottest) quickly write tests
+    by taking API snapshots.
   * [Celery][] with a Redis backend – cause you'll need an async task queue
   * [Backblaze B2](https://www.backblaze.com/b2/cloud-storage.html)
     media file storage backend (optional)
@@ -57,7 +59,7 @@ in 3 commands:
 
 - 🚢 Docker support – `docker-compose up` to get a working environment with a database
 
-- 🌠 GraphQL – interactive API with filtering and nested queries
+- ⚛️ GraphQL – interactive API with filtering and nested queries
 
 See [CHANGELOG.md](./CHANGELOG.md) for a full release history with all the
 features.
