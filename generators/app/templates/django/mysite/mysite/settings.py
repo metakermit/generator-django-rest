@@ -221,3 +221,5 @@ GRAPHENE = {
     # Where your Graphene schema lives
     'SCHEMA': '<%= project_name %>.schema.schema'
 }
+
+TEST_RUNNER = 'snapshottest.django.TestRunner'
