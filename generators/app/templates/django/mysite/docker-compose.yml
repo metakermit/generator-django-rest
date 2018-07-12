@@ -15,7 +15,7 @@ services:
     restart: on-failure
     command: gunicorn <%= project_name %>.wsgi -c <%= project_name %>/gunicorn.conf.py
     environment:
-      DATABASE_URL: psql://secret:postgres@db/postgres
+      DATABASE_URL: psql://postgres:secret@db/postgres
       REDIS_URL: redis://cache:6379
     volumes:
       - .:/code
@@ -29,7 +29,7 @@ services:
     #env_file: .env
     entrypoint: python manage.py
     environment:
-      DATABASE_URL: psql://postgres@db/postgres
+      DATABASE_URL: psql://postgres:secret@db/postgres
       REDIS_URL: redis://cache:6379
     volumes:
       - .:/code

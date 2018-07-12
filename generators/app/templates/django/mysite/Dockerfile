@@ -5,5 +5,5 @@ WORKDIR /code
 RUN pip install pipenv
 COPY Pipfile Pipfile
 COPY Pipfile.lock Pipfile.lock
-RUN pipenv install --system
+RUN pipenv install --system -d
 COPY . /code
