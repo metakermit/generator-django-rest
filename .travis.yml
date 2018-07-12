@@ -1,4 +1,11 @@
-sudo: false
+sudo: required
+services:
+  - docker
+addons:
+  apt:
+    packages:
+      - docker-ce
+
 language: node_js
 node_js:
   - v10
