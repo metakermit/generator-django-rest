@@ -2,14 +2,20 @@
 const path = require("path");
 const assert = require("yeoman-assert");
 const helpers = require("yeoman-test");
-
-const util = require('util');
-const exec = util.promisify(require('child_process').exec);
+const exec = require('child_process').exec;
 
 
 function run_partial(cwd) {
   return function(cmd) {
-    return exec(cmd, {cwd})
+    return new Promise( (resolve, reject) => {
+      let cp = exec(cmd, {cwd}, function(error) {
+        if (error) {
+          reject(error)
+        } else {
+          resolve(cp)
+        }
+      });
+    })
   }
 }
 
