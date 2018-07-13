@@ -1,10 +1,16 @@
-sudo: false
+sudo: required
+services:
+  - docker
+addons:
+  apt:
+    packages:
+      - docker-ce
+
 language: node_js
 node_js:
   - v10
   - v8
   - v6
-  - v4
 after_script: cat ./coverage/lcov.info | coveralls
 deploy:
   provider: npm

@@ -33,6 +33,7 @@ epc = "*"
 nose = "*"
 coverage = "*"
 "flake8" = "*"
+"snapshottest" = "==0.5.0"
 
 [requires]
 python_version = "3.6"
