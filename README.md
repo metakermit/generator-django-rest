@@ -92,7 +92,7 @@ cd myproject
 yo django-rest
 ```
 
-Now check *HACKING.md* for extra instructions.
+Now check [*HACKING.md*](https://github.com/metakermit/generator-django-rest/blob/master/generators/app/templates/django/mysite/HACKING.md) for extra instructions.
 
 ## License
 
