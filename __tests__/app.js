@@ -35,7 +35,7 @@ describe("generator-mytest:app", () => {
   });
 
   it("creates files", () => {
-    assert.file(["manage.py", "Pipfile", "docker-compose.yml"]);
+    assert.file(["manage.py", "Pipfile", "Pipfile.lock", "docker-compose.yml"]);
   });
 
   describe("docker", () => {

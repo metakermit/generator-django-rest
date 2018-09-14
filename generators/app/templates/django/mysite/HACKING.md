@@ -124,3 +124,6 @@ To run `python manage.py` commands use `docker-compose run cli` instead:
 And to run the entire application with necessary services:
 
     docker-compose up
+
+If you want to run Django with runserver for better debug output,
+update the docker-compose.yml file.

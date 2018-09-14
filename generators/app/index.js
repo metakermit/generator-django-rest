@@ -70,19 +70,15 @@ module.exports = class extends Generator {
     // django
     // - first without the mysite module
     this.fs.copyTpl(
-      // skip Gruntfile.js, since it uses <% templates, causing clashes
       this.templatePath("django/mysite/!(mysite){/**/*,*}"),
       //this.destinationPath('/whydoineedthis/'),
       this.destinationPath("./whydoineedthis/"),
       this.props
-      //{interpolate: /{{([\s\S]+?)}}/g} // using the {{ }} template delim.
     );
     this.fs.copyTpl(
       this.templatePath("django/mysite/mysite/{/**/*,*}"),
-      //this.destinationPath(this.props.project_name + '/whydoineedthis/'),
       this.destinationPath(this.props.project_name + "/whydoineedthis/"),
       this.props
-      //{interpolate: /{{([\s\S]+?)}}/g} // using the {{ }} template delim.
     );
 
     // static

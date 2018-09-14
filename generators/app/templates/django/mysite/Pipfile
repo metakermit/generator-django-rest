@@ -13,9 +13,11 @@ django-extensions = "*"
 ipython = "*"
 ipdb = "*"
 Pillow = "*"
-celery = "*"
+# celery = "*"
+# until this is fixed: https://github.com/celery/celery/issues/4849
+celery = {editable = true, ref = "master", git = "https://github.com/celery/celery.git"}
 django-cors-headers = "*"
-"psycopg2" = "*"
+"psycopg2-binary" = "*"
 djangorestframework = "*"
 redis = "*"
 django-debug-toolbar = "*"

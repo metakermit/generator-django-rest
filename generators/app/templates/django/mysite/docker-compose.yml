@@ -7,13 +7,22 @@ services:
   cache:
     image: redis
     restart: on-failure
+  worker:
+    build: .
+    image: <%= project_name %>
+    command: celery worker -A <%= project_name %>.celery --loglevel=info --logfile=worker.log -B
+    volumes:
+      - .:/code
+    links:
+      - db
+      - cache
   web:
     build: .
     image: <%= project_name %>
     #env_file: .env
-    #command: python manage.py runserver 0.0.0.0:8000
     restart: on-failure
     command: gunicorn <%= project_name %>.wsgi -c <%= project_name %>/gunicorn.conf.py
+    #command: python manage.py runserver 0.0.0.0:8000
     environment:
       DATABASE_URL: psql://postgres:secret@db/postgres
       REDIS_URL: redis://cache:6379
