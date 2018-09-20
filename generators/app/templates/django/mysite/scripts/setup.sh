@@ -31,14 +31,26 @@ else
 fi
 
 # create the database
+# - if there is something already running on the database port, quit
+# (this script assumes you want to run a local postgres instance)
+if lsof -Pi :$DB_PORT -sTCP:LISTEN -t >/dev/null ; then
+    lsof -iTCP:$DB_PORT -sTCP:LISTEN
+    PID_TO_KILL=$(lsof -Pi :$DB_PORT -sTCP:LISTEN -t)
+    echo "* process already running on port $DB_PORT, can't set up a new database. Please kill it to proceed:"
+    echo "kill $PID_TO_KILL"
+    exit 1
+else
+    echo "* port $DB_PORT free, so we're good to go..."
+fi
+# ok, we're safe to start the postgres process
 if [ ! -d tmp/postgres ]; then
     echo "* initialising the DB"
     mkdir -p tmp/postgres
     initdb tmp/postgres
     postgres -D tmp/postgres -p $DB_PORT & echo $! > tmp/postgres.pid
     sleep 3
-    psql postgres -p $DB_PORT -c "create user ${PROJECT_NAME} with password '${PROJECT_NAME}';"
-    psql postgres -p $DB_PORT -c "create database ${PROJECT_NAME} encoding 'utf8' template template0 owner ${PROJECT_NAME};"
+    psql postgres -p $DB_PORT -c "create user ${PROJECT_NAME_LOWERCASE} with password '${PROJECT_NAME_LOWERCASE}';"
+    psql postgres -p $DB_PORT -c "create database ${PROJECT_NAME_LOWERCASE} encoding 'utf8' template template0 owner ${PROJECT_NAME_LOWERCASE};"
     sleep 3
     pipenv run python manage.py migrate
     kill `cat tmp/postgres.pid`
@@ -79,12 +91,12 @@ fi
 ./scripts/util/setup-custom.sh
 
 if [ -d .git ]; then
+    echo "* git repo detected, won't commit anything automatically"
+else
     echo "* initialising the git repo"
     git init
     git add -A
     git commit -m "yo django-rest"
-else
-    echo "* git repo detected, won't commit anything automatically"
 fi
 
 echo "* DONE :)"
