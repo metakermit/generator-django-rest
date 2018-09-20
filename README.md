@@ -16,27 +16,36 @@ Some of the cool features are:
 
 * 🚀 quick to launch – start a new project and deploy it to [Heroku][]
   in 3 commands:
-
-          yo django-rest
-          ./scripts/setup.sh
-          ./scripts/deploy.sh
+  
+  ```shell
+  yo django-rest
+  ./scripts/setup.sh
+  ./scripts/deploy.sh
+  ```
 
 * ⚡️ productive – start the Django, DB & optionally frontend dev servers easily
 
-        ./scripts/dev.sh
+  ```shell
+  ./scripts/dev.sh
+  ```
 
-* 📜 sane logging – defaults to
-  [fail nicely](https://github.com/metakermit/fail-nicely-django)
-* 🦄 modern JS – serve static files on _/_ using [django-spa][] & Whitenoise for
+* 🐳 Docker support – get a complete environment with Django, Postgres & Redis in a single command:
+
+  ```shell
+  docker-compose up
+  ```
+
+* 🦄 modern JS – serve static files on _/_ using [django-spa][] for
   [nice single-page apps][spa-frontend-on-heroku] using React / Angular / Vue…
+* ⚛️ GraphQL – interactive API with filtering and nested queries using [Graphene](https://docs.graphene-python.org/en/latest/)
 * ⛵️ monorepo - option to automatically set up a [create-react-app][]
   frontend for you in the same git repo with everything integrated under the mantra
   _one app, one repo, one dyno_
 * 📦 Heroku-friendly packaging – if you're using the built-in React frontend,
   `deploy.sh` minifies the frontend and packages it up with Django
   into a separate prod branch ready for deployment as a Django web app
-  (that gets deployed to Heroku by default)
-* 🤓 [12-factor][] config – environment variable configuration
+  (that gets deployed to [Heroku][] by default)
+* 🤓 [12-factor][] config – environment variable configuration using [django-environ](https://github.com/joke2k/django-environ)
 
   * define a variable in _.env_ for dev e.g. `REDIS_URL=redis://localhost:6379/0`
   * use it in _settings.py_, e.g. `CELERY_RESULT_BACKEND = env('REDIS_URL')`
@@ -44,21 +53,19 @@ Some of the cool features are:
 
 * 🔋 batteries included
 
-  * [snapshottest](https://github.com/syrusakbary/snapshottest) quickly write tests
-    by taking API snapshots.
   * [Celery][] with a Redis backend – cause you'll need an async task queue
   * [Backblaze B2](https://www.backblaze.com/b2/cloud-storage.html)
     media file storage backend (optional)
+  * [snapshottest](https://github.com/syrusakbary/snapshottest) quickly write tests
+    by taking API snapshots.
 
+* 📜 sane logging – defaults to
+  [fail nicely](https://github.com/metakermit/fail-nicely-django)
 * 🐶 familiar – check out the rough
   [project file layout](generators/app/templates/django/mysite),
   it's much like `django-admin startproject myproject` would set it up
   (only repeats the project name twice,
   i.e. _~/code/myproject/myproject/settigns.py_)
-
-* 🚢 Docker support – `docker-compose up` to get a working environment with a database
-
-* ⚛️ GraphQL – interactive API with filtering and nested queries
 
 See [CHANGELOG.md](./CHANGELOG.md) for a full release history with all the
 features.
@@ -70,7 +77,7 @@ Once you have that, you need Yeoman pre-installed. Yeoman lives in the
 [npm](https://npmjs.org) package repository. You only have to ask for him
 once, then he packs up and moves into your hard drive.
 
-```bash
+```shell
 npm install -g yo
 ```
 
@@ -78,14 +85,14 @@ Then, we need the django-rest generator, i.e. plug-in. You install
 generator-django-rest from
 [npm](https://www.npmjs.com/package/generator-django-rest).
 
-```bash
+```shell
 npm install -g generator-django-rest
 ```
 
 Finally, for every new project you would initiate the generator
 in an empty folder.
 
-```bash
+```shell
 mkdir myproject
 cd myproject
 yo django-rest
