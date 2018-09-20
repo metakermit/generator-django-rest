@@ -1,4 +1,4 @@
-version: '2'
+version: '3'
 services:
   db:
     image: postgres
@@ -10,6 +10,7 @@ services:
   worker:
     build: .
     image: <%= project_name %>
+    #env_file: .env
     command: celery worker -A <%= project_name %>.celery --loglevel=info --logfile=worker.log -B
     volumes:
       - .:/code
@@ -34,6 +35,7 @@ services:
       - db
       - cache
   cli:
+    build: .
     image: <%= project_name %>
     #env_file: .env
     entrypoint: python manage.py
