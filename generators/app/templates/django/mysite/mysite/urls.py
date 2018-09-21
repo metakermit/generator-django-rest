@@ -21,6 +21,7 @@ from django.views.generic import RedirectView
 from django.conf import settings
 from graphene_django.views import GraphQLView
 
+from .api import router
 from .schema import schema
 
 
@@ -31,6 +32,12 @@ urlpatterns = [
     # - everything not matched in Django's urlpatterns goes to /
     # - index.html served on /
     # - all /static/... files served on /...
+
+    # Django REST Framework urls
+    path('api/', include(router.urls)),
+    path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+
+    #  GraphQL urls
     path('graphql/', GraphQLView.as_view(graphiql=True, schema=schema)),
 
     # other views still work too

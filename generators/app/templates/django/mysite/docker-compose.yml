@@ -13,7 +13,7 @@ services:
     #env_file: .env
     command: celery worker -A <%= project_name %>.celery --loglevel=info --logfile=worker.log -B
     volumes:
-      - .:/code
+      - .:/app
     links:
       - db
       - cache
@@ -28,7 +28,7 @@ services:
       DATABASE_URL: psql://postgres:secret@db/postgres
       REDIS_URL: redis://cache:6379
     volumes:
-      - .:/code
+      - .:/app
     ports:
       - "8000:8000"
     links:
@@ -38,12 +38,12 @@ services:
     build: .
     image: <%= project_name %>
     #env_file: .env
-    entrypoint: python manage.py
+    entrypoint: python3 manage.py
     environment:
       DATABASE_URL: psql://postgres:secret@db/postgres
       REDIS_URL: redis://cache:6379
     volumes:
-      - .:/code
+      - .:/app
     links:
       - db
       - cache

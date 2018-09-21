@@ -1,0 +1,8 @@
+{
+  "name": "<%= project_name %>",
+  "description": "A Django REST API",
+  "repository": "<%= git_url %>",
+  "logo": "",
+  "keywords": ["Django", "REST", "API"],
+  "addons": ["heroku-postgresql", "heroku-redis"]
+}

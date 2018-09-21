@@ -3,7 +3,8 @@
 A [Yeoman](http://yeoman.io) generator for a Django REST API
 (and optionally a React SPA)
 that makes you efficient, includes features you need in a typical
-modern web app, yet keeps things simple.
+modern web app, yet keeps things simple. You can see an example app bootstrapped
+in this manner [here][hellodjango].
 
 **Note: the project is still considered to be in beta until I get a chance
 to test it on more apps. That said, I am using it in my own projects :)**
@@ -65,7 +66,8 @@ Some of the cool features are:
   [project file layout](generators/app/templates/django/mysite),
   it's much like `django-admin startproject myproject` would set it up
   (only repeats the project name twice,
-  i.e. _~/code/myproject/myproject/settigns.py_)
+  i.e. _~/code/myproject/myproject/settigns.py_). An example generated app is
+  available [here][hellodjango].
 
 See [CHANGELOG.md](./CHANGELOG.md) for a full release history with all the
 features.
@@ -111,3 +113,4 @@ extra instructions (generated from [this template](https://github.com/metakermit
 [celery]: http://www.celeryproject.org/
 [create-react-app]: https://github.com/facebookincubator/create-react-app
 [django-spa]: https://github.com/metakermit/django-spa
+[hellodjango]: https://github.com/metakermit/hellodjango

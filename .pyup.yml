@@ -3,5 +3,5 @@
 
 schedule: every month
 requirements:
-  - generators/app/templates/projectfiles/Pipfile
-  - generators/app/templates/projectfiles/Pipfile.lock
+  - generators/app/templates/django/mysite/Pipfile
+  - generators/app/templates/django/mysite/Pipfile.lock

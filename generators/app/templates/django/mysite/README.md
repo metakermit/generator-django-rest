@@ -1,13 +1,45 @@
 # <%= project_name %>
 
+A Django REST API<% if (prod_branch) { %> with a React SPA frontend<% } %> scaffolded using [generator-django-rest][].
+
 ## Development
 
 To get started with development, set up the dependencies:
 
-    ./scripts/setup.sh
+```shell
+./scripts/setup.sh
+```
 
 And start the development server:
 
-    ./scripts/dev.sh
+```shell
+./scripts/dev.sh
+```
+
+If you prefer Docker, use:
+
+```shell
+docker-compose run cli migrate
+docker-compose run cli createsuperuser
+docker-compose up
+```
+
+## Deployment
+
+You can easily deploy the app on Heroku:
+
+<% if (prod_branch) { %>
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=<%= git_url %>/tree/prod)
+<% } else { %>
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+<% } %>
+
+and then trigger new deployments by running:
+
+```shell
+./scripts/deploy.sh
+```
 
 More information in [HACKING.md](HACKING.md).
+
+[generator-django-rest]: https://github.com/metakermit/generator-django-rest
