@@ -17,5 +17,7 @@ git checkout -b prod
 echo "# The production branch" > README.md
 git add -A
 git commit -m "initial commit"
-git push -u origin prod
+if [[ ! -z $GIT_URL ]]; then
+    git push -u origin prod
+fi
 cd ..

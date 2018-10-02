@@ -98,6 +98,17 @@ else
     git add -A
     git commit -m "yo django-rest"
 fi
+# set git remotes
+if [[ ! -z $GIT_URL ]]; then
+    echo "* setting git remote"
+    git remote add origin $GIT_URL
+fi
+<% if (!prod_branch) { %>
+if [[ ! -z $HEROKU_URL ]]; then
+    echo "* setting heroku remote"
+    git remote add heroku $HEROKU_URL
+fi
+<% } %>
 
 echo "* DONE :)"
 
