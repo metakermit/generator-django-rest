@@ -1,23 +1,23 @@
 [[source]]
+
 url = "https://pypi.python.org/simple"
 verify_ssl = true
 name = "pypi"
 
+
 [packages]
-Django = "==2.0.4"
-"graphene-django" = "==2.0.0"
-"django-filter" = "==1.1.0"
-"django-backblazeb2-storage" = "*"
+
+Django = "==2.1.2"
+graphene-django = "==2.2.0"
+django-filter = "==2.0.0"
+django-backblazeb2-storage = "*"
 django-environ = "*"
 django-extensions = "*"
 ipython = "*"
 ipdb = "*"
 Pillow = "*"
-# celery = "*"
-# until this is fixed: https://github.com/celery/celery/issues/4849
-celery = {editable = true, ref = "master", git = "https://github.com/celery/celery.git"}
 django-cors-headers = "*"
-"psycopg2-binary" = "*"
+psycopg2-binary = "*"
 djangorestframework = "*"
 redis = "*"
 django-debug-toolbar = "*"
@@ -26,7 +26,9 @@ django-anymail = "*"
 gunicorn = "*"
 eventlet = "*"
 
+
 [dev-packages]
+
 Werkzeug = "*"
 honcho = "*"
 PyYAML = "*"
@@ -34,8 +36,17 @@ jedi = "*"
 epc = "*"
 nose = "*"
 coverage = "*"
-"flake8" = "*"
-"snapshottest" = "*"
+flake8 = "*"
+snapshottest = "*"
+
 
 [requires]
+
 python_version = "3.7"
+
+
+[packages.celery]
+
+editable = true
+ref = "master"
+git = "https://github.com/celery/celery.git"
