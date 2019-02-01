@@ -418,10 +418,10 @@
         },
         "pygments": {
             "hashes": [
-                "sha256:78f3f434bcc5d6ee09020f92ba487f95ba50f1e3ef83ae96b9d5ffa1bab25c5d",
-                "sha256:dbae1046def0efb574852fab9e90209b23f556367b5a320c0bcb871c77c3e8cc"
+                "sha256:e8218dd399a61674745138520d0d4cf2621d7e032439341bc3f647bff125818d",
+                "sha256:5ffada19f6203563680669ee7f53b64dabbeb100eb51b61996085e99c03b284a"
             ],
-            "version": "==2.2.0"
+            "version": "==2.3.1"
         },
         "pytz": {
             "hashes": [
