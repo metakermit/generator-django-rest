@@ -9,7 +9,7 @@ name = "pypi"
 
 Django = "==2.2.1"
 graphene-django = "==2.2.0"
-django-filter = "==2.0.0"
+django-filter = "==2.1.0"
 django-backblazeb2-storage = "*"
 django-environ = "*"
 django-extensions = "*"
