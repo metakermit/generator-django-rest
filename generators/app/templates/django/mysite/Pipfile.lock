@@ -260,10 +260,10 @@
         },
         "jedi": {
             "hashes": [
-                "sha256:b409ed0f6913a701ed474a614a3bb46e6953639033e31f769ca7581da5bd1ec1",
-                "sha256:c254b135fb39ad76e78d4d8f92765ebc9bf92cbc76f49e97ade1d5f5121e1f6f"
+                "sha256:2bb0603e3506f708e792c7f4ad8fc2a7a9d9c2d292a358fbbd58da531695595b",
+                "sha256:2c6bcd9545c7d6440951b12b44d373479bf18123a401a52025cf98563fbd826c"
             ],
-            "version": "==0.12.1"
+            "version": "==0.13.3"
         },
         "kombu": {
             "hashes": [
@@ -585,10 +585,10 @@
         },
         "jedi": {
             "hashes": [
-                "sha256:b409ed0f6913a701ed474a614a3bb46e6953639033e31f769ca7581da5bd1ec1",
-                "sha256:c254b135fb39ad76e78d4d8f92765ebc9bf92cbc76f49e97ade1d5f5121e1f6f"
+                "sha256:2bb0603e3506f708e792c7f4ad8fc2a7a9d9c2d292a358fbbd58da531695595b",
+                "sha256:2c6bcd9545c7d6440951b12b44d373479bf18123a401a52025cf98563fbd826c"
             ],
-            "version": "==0.12.1"
+            "version": "==0.13.3"
         },
         "mccabe": {
             "hashes": [
