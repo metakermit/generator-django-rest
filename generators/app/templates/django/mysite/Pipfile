@@ -8,7 +8,7 @@ name = "pypi"
 [packages]
 
 Django = "==2.2.3"
-graphene-django = "==2.2.0"
+graphene-django = "==2.3.2"
 django-filter = "==2.0.0"
 django-backblazeb2-storage = "*"
 django-environ = "*"
