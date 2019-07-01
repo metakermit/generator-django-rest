@@ -165,10 +165,10 @@
         },
         "graphene": {
             "hashes": [
-                "sha256:b8ec446d17fa68721636eaad3d6adc1a378cb6323e219814c8f98c9928fc9642",
-                "sha256:faa26573b598b22ffd274e2fd7a4c52efa405dcca96e01a62239482246248aa3"
+                "sha256:2ac16d6bb3bdba4da3daa0f6d15b74ac585ed6a016980f502c77c3e687c763bb",
+                "sha256:fcbcb24ee960b2c768de4285fbd025aa98eed4ecb6a679bbd41985b05b4008c5"
             ],
-            "version": "==2.1.3"
+            "version": "==2.1.6"
         },
         "graphene-django": {
             "hashes": [
