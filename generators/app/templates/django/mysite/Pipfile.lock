@@ -86,11 +86,10 @@
         },
         "django-anymail": {
             "hashes": [
-                "sha256:855f93b06713ac8505ecf4adf1209e90293b3a33dea2687846f27050b21b02b4",
-                "sha256:87396529ba0f0baebeee63b0d719a7ddf335a7f88802b250b53f126a2631037a"
+                "sha256:72549db8823c144a334bf88c8e749becb1fc82911658129549f46bfb84de311c",
+                "sha256:947c9c5de009036771ff9c4295da1836c950fdee4d7c27441181ce1021c370a8"
             ],
-            "index": "pypi",
-            "version": "==4.2"
+            "version": "==6.1.0"
         },
         "django-backblazeb2-storage": {
             "hashes": [
