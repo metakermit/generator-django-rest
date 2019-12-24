@@ -1,15 +1,16 @@
 {
   "name": "generator-django-rest",
   "version": "0.9.0",
-  "description":
-    "A Yeoman generator for a Django REST API that makes you efficient, includes features you need in a typical modern web app, yet keeps things simple.",
+  "description": "A Yeoman generator for a Django REST API that makes you efficient, includes features you need in a typical modern web app, yet keeps things simple.",
   "homepage": "https://github.com/metakermit/generator-django-rest",
   "author": {
     "name": "Dražen Lučanin",
     "email": "kermit666@gmail.com",
     "url": "https://github.com/metakermit"
   },
-  "files": ["generators"],
+  "files": [
+    "generators"
+  ],
   "main": "app/index.js",
   "keywords": [
     "yeoman-generator",
@@ -20,19 +21,19 @@
     "yeoman-generator"
   ],
   "devDependencies": {
-    "auto-changelog": "^1.4.6",
-    "coveralls": "^3.0.0",
+    "auto-changelog": "^1.16.2",
+    "coveralls": "^3.0.9",
     "eslint": "^4.19.1",
-    "eslint-config-prettier": "^2.9.0",
+    "eslint-config-prettier": "^2.10.0",
     "eslint-config-xo": "^0.20.1",
     "eslint-config-xo-space": "^0.7.0",
-    "eslint-plugin-prettier": "^2.6.0",
+    "eslint-plugin-prettier": "^2.7.0",
     "husky": "^0.14.3",
-    "jest": "^22.0.6",
+    "jest": "^22.4.4",
     "lint-staged": "^6.1.1",
-    "prettier": "^1.11.1",
+    "prettier": "^1.19.1",
     "yeoman-assert": "^3.1.0",
-    "yeoman-test": "^1.8.0"
+    "yeoman-test": "^1.9.1"
   },
   "engines": {
     "npm": ">= 4.0.0"
@@ -40,12 +41,9 @@
   "license": "MIT",
   "repository": "metakermit/generator-django-rest",
   "scripts": {
-    "release:major":
-      "npm version major && auto-changelog && git add CHANGELOG.md && git commit -m 'update CHANGELOG.md' && git push origin && git push origin --tags",
-    "release:minor":
-      "npm version minor && auto-changelog && git add CHANGELOG.md && git commit -m 'update CHANGELOG.md' && git push origin && git push origin --tags",
-    "release:patch":
-      "npm version patch && auto-changelog && git add CHANGELOG.md && git commit -m 'update CHANGELOG.md' && git push origin && git push origin --tags",
+    "release:major": "npm version major && auto-changelog && git add CHANGELOG.md && git commit -m 'update CHANGELOG.md' && git push origin && git push origin --tags",
+    "release:minor": "npm version minor && auto-changelog && git add CHANGELOG.md && git commit -m 'update CHANGELOG.md' && git push origin && git push origin --tags",
+    "release:patch": "npm version patch && auto-changelog && git add CHANGELOG.md && git commit -m 'update CHANGELOG.md' && git push origin && git push origin --tags",
     "prepublishOnly": "npm audit",
     "pretest": "eslint .",
     "precommit": "lint-staged",
@@ -57,7 +55,10 @@
     "yosay": "^2.0.1"
   },
   "eslintConfig": {
-    "extends": ["xo", "prettier"],
+    "extends": [
+      "xo",
+      "prettier"
+    ],
     "env": {
       "mocha": true,
       "jest": true,
@@ -72,13 +73,21 @@
         }
       ]
     },
-    "plugins": ["prettier"]
+    "plugins": [
+      "prettier"
+    ]
   },
   "jest": {
     "testEnvironment": "node"
   },
   "lint-staged": {
-    "*.js": ["eslint --fix", "git add"],
-    "*.json": ["prettier --write", "git add"]
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ],
+    "*.json": [
+      "prettier --write",
+      "git add"
+    ]
   }
 }
