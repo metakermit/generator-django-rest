@@ -46,6 +46,7 @@ Some of the cool features are:
   `deploy.sh` minifies the frontend and packages it up with Django
   into a separate prod branch ready for deployment as a Django web app
   (that gets deployed to [Heroku][] by default)
+* 🍣 Dokku support – deploy to [Dokku](https://github.com/dokku/dokku), a DIY alternative to Heroku
 * 🤓 [12-factor][] config – environment variable configuration using [django-environ](https://github.com/joke2k/django-environ)
 
   * define a variable in _.env_ for dev e.g. `REDIS_URL=redis://localhost:6379/0`
@@ -67,7 +68,7 @@ Some of the cool features are:
   it's much like `django-admin startproject myproject` would set it up
   (only repeats the project name twice,
   i.e. _~/code/myproject/myproject/settigns.py_). An example generated app is
-  available [here][hellodjango].
+  published as [metakermit/hellodjango][hellodjango].
 
 See [CHANGELOG.md](./CHANGELOG.md) for a full release history with all the
 features.
@@ -104,6 +105,10 @@ Now check the _HACKING.md_ file in the generated code project for
 extra instructions (generated from [this template](https://github.com/metakermit/generator-django-rest/blob/master/generators/app/templates/django/mysite/HACKING.md) if you're curious).
 
 ## Contributing
+
+If you have some ideas for contributions, suggestions are always welcome.
+Note, however, that the goal of the project is to stay minimalist,
+so we'll try to keep the number of dependencies small.
 
 As a reminder to myself, I release a new version of generator-django-rest by running:
 
