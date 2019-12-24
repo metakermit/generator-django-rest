@@ -23,17 +23,17 @@
   "devDependencies": {
     "auto-changelog": "^1.16.2",
     "coveralls": "^3.0.9",
-    "eslint": "^4.19.1",
-    "eslint-config-prettier": "^2.10.0",
-    "eslint-config-xo": "^0.20.1",
-    "eslint-config-xo-space": "^0.7.0",
-    "eslint-plugin-prettier": "^2.7.0",
-    "husky": "^0.14.3",
-    "jest": "^22.4.4",
-    "lint-staged": "^6.1.1",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.7.0",
+    "eslint-config-xo": "^0.27.2",
+    "eslint-config-xo-space": "^0.22.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "husky": "^3.1.0",
+    "jest": "^24.9.0",
+    "lint-staged": "^9.5.0",
     "prettier": "^1.19.1",
-    "yeoman-assert": "^3.1.0",
-    "yeoman-test": "^1.9.1"
+    "yeoman-assert": "^3.1.1",
+    "yeoman-test": "^2.0.0"
   },
   "engines": {
     "npm": ">= 4.0.0"
@@ -50,9 +50,9 @@
     "test": "jest"
   },
   "dependencies": {
-    "chalk": "^2.1.0",
-    "yeoman-generator": "^2.0.1",
-    "yosay": "^2.0.1"
+    "chalk": "^3.0.0",
+    "yeoman-generator": "^4.3.0",
+    "yosay": "^2.0.2"
   },
   "eslintConfig": {
     "extends": [
