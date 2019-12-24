@@ -41,6 +41,7 @@ tmp
 .env
 
 celerybeat-schedule
+celerybeat-schedule.db
 dump.rdb
 .prod-tmp
 
