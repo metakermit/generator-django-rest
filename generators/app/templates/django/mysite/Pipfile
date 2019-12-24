@@ -1,15 +1,12 @@
 [[source]]
-
 url = "https://pypi.python.org/simple"
 verify_ssl = true
 name = "pypi"
 
-
 [packages]
-
-Django = "==2.1.2"
-graphene-django = "==2.2.0"
-django-filter = "==2.0.0"
+Django = "==3.0"
+graphene-django = "*"
+django-filter = "*"
 django-backblazeb2-storage = "*"
 django-environ = "*"
 django-extensions = "*"
@@ -20,33 +17,18 @@ django-cors-headers = "*"
 psycopg2-binary = "*"
 djangorestframework = "*"
 redis = "*"
+celery = "*"
 django-debug-toolbar = "*"
 django-spa = "*"
 django-anymail = "*"
 gunicorn = "*"
-eventlet = "*"
-
+graphene = "*"
 
 [dev-packages]
-
 Werkzeug = "*"
 honcho = "*"
-PyYAML = "*"
 jedi = "*"
 epc = "*"
-nose = "*"
-coverage = "*"
-flake8 = "*"
-snapshottest = "*"
-
 
 [requires]
-
 python_version = "3.7"
-
-
-[packages.celery]
-
-editable = true
-ref = "master"
-git = "https://github.com/celery/celery.git"

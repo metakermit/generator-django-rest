@@ -103,6 +103,15 @@ yo django-rest
 Now check the _HACKING.md_ file in the generated code project for
 extra instructions (generated from [this template](https://github.com/metakermit/generator-django-rest/blob/master/generators/app/templates/django/mysite/HACKING.md) if you're curious).
 
+## Contributing
+
+As a reminder to myself, I release a new version of generator-django-rest by running:
+
+```shell
+npm run release:patch # or :minor or :major
+npm publish
+```
+
 ## License
 
 [MIT](LICENSE)
