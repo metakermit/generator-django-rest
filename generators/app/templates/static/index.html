@@ -1,1 +1,45 @@
-Hello Django-REST!
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title><%= project_name %></title>
+</head>
+<style>body{ background: lightyellow; font-family: sans-serif; } #results {background: black; color: white; padding: 4px; }</style>
+
+<body id="home">
+  
+  <h1><%= project_name %></h1>
+  <p>Request to <a href="/api">API root</a> result:</p>
+  <pre id="results">Bla</pre>
+  <p>Check out the <a href="/admin">admin interface</a>.</p>
+  <p><em>Generated using <a href="https://github.com/metakermit/generator-django-rest">generator-django-rest</a>.</em></p>
+  
+  <script>
+    function main() {
+      let request = new XMLHttpRequest();
+      var results = document.getElementById('results');
+      request.onreadystatechange = function () {
+        if (this.readyState === 4) {
+          if (this.status === 200) {
+            document.body.className = 'ok';
+            console.log(this.responseText);
+            results.innerText = "status: " + this.status + "\ncontent:\n" + this.response;
+          } else if (this.response == null && this.status === 0) {
+            document.body.className = 'error offline';
+            results.innerText = "status: 0\nappears we are offline";
+          } else {
+            document.body.className = 'error';
+            results.innerText = "status: " + this.status + "\ncontent:\n" + this.response;
+          }
+        }
+      };
+      request.open("GET", "/api", true);
+      request.send(null);
+    }
+    document.addEventListener('DOMContentLoaded', (event) => {
+      main();
+    })
+  </script>
+  
+</body>
+</html>
