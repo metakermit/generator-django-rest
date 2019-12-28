@@ -3,8 +3,8 @@
 A [Yeoman](http://yeoman.io) generator for a Django REST API
 (and optionally a React SPA)
 that makes you efficient, includes features you need in a typical
-modern web app, yet keeps things simple. You can see an example app bootstrapped
-in this manner [here][hellodjango].
+modern web app, yet keeps things simple. You can see an example project
+bootstrapped in this manner [here][hellodjangorest].
 
 **Note: the project is still considered to be in beta until I get a chance
 to test it on more apps. That said, I am using it in my own projects :)**
@@ -20,14 +20,14 @@ Some of the cool features are:
   
   ```shell
   yo django-rest
-  ./scripts/setup.sh
+  ./scripts/install.sh
   ./scripts/deploy.sh
   ```
 
 * ⚡️ productive – start the Django, DB & optionally frontend dev servers easily
 
   ```shell
-  ./scripts/dev.sh
+  ./scripts/start.sh
   ```
 
 * 🐳 Docker support – get a complete environment with Django, Postgres & Redis in a single command:
@@ -66,7 +66,7 @@ Some of the cool features are:
   it's much like `django-admin startproject myproject` would set it up
   (only repeats the project name twice,
   i.e. _~/code/myproject/myproject/settigns.py_). An example generated app is
-  published as [metakermit/hellodjango][hellodjango].
+  published as [metakermit/hellodjango][hellodjangorest].
 
 See [CHANGELOG.md](./CHANGELOG.md) for a full release history with all the
 features.
@@ -125,4 +125,5 @@ npm publish
 [celery]: http://www.celeryproject.org/
 [create-react-app]: https://github.com/facebookincubator/create-react-app
 [django-spa]: https://github.com/metakermit/django-spa
+[hellodjangorest]: https://github.com/metakermit/hellodjangorest
 [hellodjango]: https://github.com/metakermit/hellodjango

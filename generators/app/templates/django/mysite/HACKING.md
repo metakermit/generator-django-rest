@@ -3,13 +3,13 @@
 Setup your <%= project_name %> development environment:
 
 ```shell
-./scripts/setup.sh
+./scripts/install.sh
 ```
 
 And start developing
 
 ```shell
-./scripts/dev.sh
+./scripts/start.sh
 ```
 
 ## Deployment to Heroku
@@ -19,13 +19,12 @@ You can quickly deploy <%= project_name %> to Heroku:
 ```shell
 heroku login
 heroku create <%= project_name %>
+heroku git:remote -a <%= project_name %>
+heroku addons:create heroku-postgresql:hobby-dev # for the DB
 heroku addons:create heroku-redis:hobby-dev # for Celery
 ./scripts/deploy.sh
 heroku run python manage.py migrate
 ```
-
-*Note: there seems to be an error with Heroku, check
-[this solution](http://stackoverflow.com/a/38954680/544059).*
 
 Once this initial setup is working, you normally deploy by issuing:
 

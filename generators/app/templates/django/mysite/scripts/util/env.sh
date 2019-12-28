@@ -7,4 +7,3 @@ PROJECT_NAME=<%= project_name %>
 PROJECT_NAME_LOWERCASE=$(lc $PROJECT_NAME)
 FRONTEND_NAME=<%= project_name %>-frontend
 GIT_URL=<%= git_url %>
-HEROKU_URL=<%= heroku_url %>

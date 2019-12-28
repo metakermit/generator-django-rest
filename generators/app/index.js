@@ -22,7 +22,7 @@ module.exports = class extends Generator {
         type: "confirm",
         name: "prod_branch",
         message:
-          "You want a create-react-app frontend that compiles to a separate prod branch?",
+          "You want a frontend that compiles to a separate prod branch?",
         default: false,
         store: true
       },
@@ -30,14 +30,6 @@ module.exports = class extends Generator {
         type: "input",
         name: "git_url",
         message: "Optionally give us the git remote url of your repo:",
-        default: "",
-        store: true
-      },
-      {
-        type: "input",
-        name: "heroku_url",
-        message:
-          "...and if you want to deploy to Heroku, the Heroku git url too:",
         default: "",
         store: true
       }
@@ -70,15 +62,15 @@ module.exports = class extends Generator {
     // django
     // - first without the mysite module
     this.fs.copyTpl(
-      this.templatePath("django/mysite/!(mysite){/**/*,*}"),
+      this.templatePath("django/mysite/!(mysite){**/*,*}"),
       //this.destinationPath('/whydoineedthis/'),
-      this.destinationPath("./whydoineedthis/"),
+      this.destinationPath("./"),
       this.props
     );
     this.fs.copyTpl(
-      this.templatePath("django/mysite/mysite/{/**/*,*}"),
-      this.destinationPath(this.props.project_name + "/whydoineedthis/"),
-      this.props
+      this.templatePath("django/mysite/mysite/{**/*,*}"),
+      this.destinationPath(this.props.project_name),
+      this.props  
     );
 
     // static

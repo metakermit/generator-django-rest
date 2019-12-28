@@ -12,13 +12,13 @@ Before getting started, make sure you've installed:
 To get started with development, set up the dependencies:
 
 ```shell
-./scripts/setup.sh
+./scripts/install.sh
 ```
 
 And start the development server:
 
 ```shell
-./scripts/dev.sh
+./scripts/start.sh
 ```
 
 If you prefer Docker, use:
