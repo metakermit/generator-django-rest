@@ -1,19 +1,22 @@
 # generator-django-rest [![npm](https://badge.fury.io/js/generator-django-rest.svg)](http://badge.fury.io/js/generator-django-rest) [![Build Status](https://travis-ci.org/metakermit/generator-django-rest.svg?branch=master)](https://travis-ci.org/metakermit/generator-django-rest) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/metakermit/generator-django-rest/master/LICENSE) [![Updates](https://pyup.io/repos/github/metakermit/generator-django-rest/shield.svg)](https://pyup.io/repos/github/metakermit/generator-django-rest/)
 
-A [Yeoman](http://yeoman.io) generator for a Django REST API
-(and optionally a React SPA)
-that makes you efficient, includes features you need in a typical
-modern web app, yet keeps things simple. You can see an example project
-bootstrapped in this manner [here][hellodjangorest].
+A [Yeoman](http://yeoman.io) generator for easily bootstrapping a Django REST API
+with some common settings and quickly deployable to Heroku/Dokku.
+Check out this quick screencast showing you how to deploy a full-fledged
+Django REST API to Heroku in 5 minutes:
 
-**Note: the project is still considered to be in beta until I get a chance
-to test it on more apps. That said, I am using it in my own projects :)**
+[![asciicast](https://asciinema.org/a/290704.svg)](https://asciinema.org/a/290704)
+
+The goal is to keep you efficient and include features you
+need in a typical modern web app, yet keeps things simple and not too bloated.
+You can see an example generated Django project [here][hellodjangorest].
+
+*Note: the project is still considered to be in beta until I get a chance
+to test it on more apps. That said, I am using it in my own projects :)*
 
 ## Features
 
-The philosophy is to include features useful across projects
-that are tedious to set up from scratch.
-Some of the cool features are:
+Some of the cool features that come with generator-django-rest are:
 
 * 🚀 quick to launch – start a new project and deploy it to [Heroku][]
   in 3 commands:
@@ -46,7 +49,7 @@ Some of the cool features are:
   `deploy.sh` minifies the frontend and packages it up with Django
   into a separate prod branch ready for deployment as a Django web app
   (that gets deployed to [Heroku][] by default)
-* 🍣 Dokku support – deploy to [Dokku](https://github.com/dokku/dokku), a DIY alternative to Heroku
+* 🍣 Dokku support – quick to deploy to [Dokku](https://github.com/dokku/dokku), a DIY alternative to Heroku
 * 🤓 [12-factor][] config – environment variable configuration using [django-environ](https://github.com/joke2k/django-environ)
 
   * define a variable in _.env_ for dev e.g. `REDIS_URL=redis://localhost:6379/0`
