@@ -7,8 +7,7 @@ test('dummy test', () => {
   expect(1 + 2).toBe(3);
 });
 
-/* disabling this test until the Dockerfile is updated to be more like
-https://hub.docker.com/r/kennethreitz/pipenv/dockerfile */
+/* disabling this until the test runner is configured - probably using pytest */
 
 // function run_partial(cwd) {
 //   return function(cmd) {

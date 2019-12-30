@@ -34,54 +34,9 @@ update the *docker-compose.yml* file.
 
 ## Frontend details
 <% if (prod_branch) { %>
-Since the tooling manages a React SPA as well,
-the compilation is a bit more complex, so we will explain the internals a bit.
 When you call *./deploy.sh* everything gets compiled into a *prod/* folder,
-commited into a prod branch and pushed to Heroku.
-
-An example of the *prod/* folder layout would look something like this:
-
-```
-prod
-├── Dockerfile
-├── HACKING.md
-├── Procfile
-├── Procfile.dev.example
-├── README.md
-├── docker-compose.yml
-├── manage.py
-├── myproject
-│   ├── __init__.py
-│   ├── celery.py
-│   ├── logger.py
-│   ├── middleware.py
-│   ├── settings.py
-│   ├── static
-│   │   ├── asset-manifest.json
-│   │   ├── favicon.ico
-│   │   ├── index.html
-│   │   ├── manifest.json
-│   │   ├── service-worker.js
-│   │   └── static
-│   │       ├── css
-│   │       │   ├── main.cacbacc7.css
-│   │       │   └── main.cacbacc7.css.map
-│   │       ├── js
-│   │       │   ├── main.120eaed3.js
-│   │       │   └── main.120eaed3.js.map
-│   │       └── media
-│   │           └── logo.5d5d9eef.svg
-│   ├── urls.py
-│   └── wsgi.py
-├── requirements
-│   ├── base.txt
-│   ├── custom.txt
-│   ├── dev.txt
-│   ├── prod.txt
-│   └── test.txt
-├── requirements.txt
-└── runtime.txt
-```
+including minified frontend code,
+commited into a *prod* branch and pushed to Heroku.
 
 Note that create-react-app includes a service worker that caches everything
 into local storage which is good for performance reasons, but messes up routing
