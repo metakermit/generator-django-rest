@@ -19,7 +19,7 @@ django-anymail = "*"
 gunicorn = "*"
 graphene = "*"
 graphene-django = "*"
-psycopg2 = "*"
+psycopg2-binary = "*"
 redis = "*"
 
 [dev-packages]
