@@ -118,7 +118,6 @@ of generator-django-rest install `node` and get these npm package:
 
 ```shell
 npm install -g yo generator-django-rest
-npm update -g yo generator-django-rest # maybe not necessary?
 ```
 
 If you use `yarn` instead do:
@@ -131,10 +130,10 @@ yarn global upgrade yo generator-django-rest
 Then from within the root of your project (the path containing this file) run:
 
 ```shell
-yo django-rest <%= project_name %>
+yo django-rest
 ```
 
-And resolve any conflicts using the interactive queries.
+And resolve any conflicts using the interactive prompts.
 
 
 [generator-django-rest]: https://github.com/metakermit/generator-django-rest
