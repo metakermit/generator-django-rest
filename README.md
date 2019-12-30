@@ -10,6 +10,8 @@ Django REST API to Heroku in 5 minutes:
 The goal is to keep you efficient and include features you
 need in a typical modern web app, yet keeps things simple and not too bloated.
 You can see an example generated Django project [here][hellodjangorest].
+For some background on how and why the project was created,
+read this [article][blog].
 
 *Note: the project is still considered to be in beta until I get a chance
 to test it on more apps. That said, I am using it in my own projects :)*
@@ -130,3 +132,4 @@ npm publish
 [django-spa]: https://github.com/metakermit/django-spa
 [hellodjangorest]: https://github.com/metakermit/hellodjangorest
 [hellodjango]: https://github.com/metakermit/hellodjango
+[blog]: https://metakermit.com/2019/deploy-a-django-rest-api-to-heroku-in-5-minutes/
