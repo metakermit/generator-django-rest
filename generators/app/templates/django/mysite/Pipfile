@@ -4,7 +4,7 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-Django = "==3.0.3"
+Django = "==3.1.12"
 Pillow = "*"
 celery = "*"
 djangorestframework = "*"
