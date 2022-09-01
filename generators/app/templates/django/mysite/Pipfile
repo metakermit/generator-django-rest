@@ -1,32 +1,32 @@
 [[source]]
+name = "pypi"
 url = "https://pypi.python.org/simple"
 verify_ssl = true
-name = "pypi"
+
+[dev-packages]
+Werkzeug = "*"
+honcho = "*"
+ipdb = "*"
+ipython = "*"
 
 [packages]
-Django = "==3.0.3"
+Django = "==4.1"
 Pillow = "*"
 celery = "*"
-djangorestframework = "*"
+django-anymail = "*"
 django-backblazeb2-storage = "*"
 django-cors-headers = "*"
+django-debug-toolbar = "*"
 django-environ = "*"
 django-extensions = "*"
 django-filter = "*"
-django-debug-toolbar = "*"
 django-spa = "*"
-django-anymail = "*"
-gunicorn = "*"
+djangorestframework = "*"
 graphene = "*"
 graphene-django = "*"
+gunicorn = "*"
 psycopg2-binary = "*"
 redis = "*"
-
-[dev-packages]
-honcho = "*"
-ipython = "*"
-ipdb = "*"
-Werkzeug = "*"
 
 [requires]
 python_version = "3.7"
